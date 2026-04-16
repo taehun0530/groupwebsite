@@ -17,7 +17,7 @@ export default function Footer() {
         </div>
 
         <div className="md:col-span-3 space-y-6">
-          <h5 className="font-sans font-bold text-xs uppercase tracking-[0.2em] text-primary">Resources</h5>
+          <h5 className="font-sans font-bold text-xs uppercase tracking-widest text-primary">Resources</h5>
           <nav className="flex flex-col gap-3">
             <Link to="#" className="font-academic text-slate-500 hover:text-primary transition-colors">Contact</Link>
             <Link to="#" className="font-academic text-slate-500 hover:text-primary transition-colors">Affiliation</Link>
@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
 
         <div className="md:col-span-4 space-y-6">
-          <h5 className="font-sans font-bold text-xs uppercase tracking-[0.2em] text-primary">Location</h5>
+          <h5 className="font-sans font-bold text-xs uppercase tracking-widest text-primary">Location</h5>
           <address className="not-italic font-academic text-slate-500 leading-relaxed">
             333, Techno Jungang-daero,<br />
             Hyeonpung-eup, Dalseong-gun,<br />

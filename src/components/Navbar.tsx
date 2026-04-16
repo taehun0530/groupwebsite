@@ -18,13 +18,13 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 glass-nav border-b border-slate-200/50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="font-sans font-extrabold text-xl tracking-tighter text-primary shrink-0">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+        <Link to="/" className="font-sans font-extrabold text-lg tracking-tighter text-primary shrink-0">
           Lee Group @ DGIST
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -38,9 +38,6 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <button className="font-sans text-[10px] font-bold px-3 py-1.5 bg-surface-container-highest/40 rounded-full text-primary border border-slate-200 uppercase tracking-tighter">
-            EN/KO
-          </button>
         </div>
 
         {/* Mobile Toggle */}

@@ -27,28 +27,12 @@
   }
 }
 
-.double-divider {
-  position: relative;
-  height: 4px;
-  margin-top: 1rem;
-}
-
-.double-divider::before,
-.double-divider::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: #1A365D;
-}
-
-.double-divider::before {
-  top: 0;
-}
-
-.double-divider::after {
-  bottom: 0;
+.section-divider {
+  width: 4px;
+  height: 24px;
+  background-color: #10B981; /* emerald-500 */
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .glass-nav {
