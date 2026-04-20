@@ -343,13 +343,13 @@ export default function Publications() {
 
   return (
     <div className="pt-20 pb-12">
-      <header className="max-w-7xl mx-auto px-8 mb-10">
-        <h1 className="font-sans font-extrabold text-3xl tracking-tighter text-primary mb-3">Publications</h1>
+      <header className="max-w-7xl mx-auto px-8 mb-6">
+        <h1 className="font-sans font-extrabold text-2xl md:text-3xl tracking-tighter text-primary mb-2">Publications</h1>
         <a 
           href="https://scholar.google.com/scholar?q=Taehun+Lee+DGIST" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-emerald-600 font-sans text-[10px] font-bold hover:underline tracking-widest uppercase"
+          className="inline-flex items-center gap-2 text-tertiary font-sans text-[10px] font-bold hover:underline tracking-widest uppercase"
         >
           <GraduationCap size={14} />
           Google Scholar Profile
@@ -357,7 +357,7 @@ export default function Publications() {
       </header>
 
       {/* Filter */}
-      <section className="sticky top-16 z-40 bg-white/80 backdrop-blur-md mb-10 border-b border-slate-100">
+      <section className="sticky top-16 z-40 bg-white/80 backdrop-blur-md mb-6 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-8 py-2.5">
           <div className="flex items-center gap-5 overflow-x-auto no-scrollbar">
             <div className="flex gap-1.5">
@@ -368,7 +368,7 @@ export default function Publications() {
                   className={`font-sans text-[10px] font-bold px-4 py-1.5 rounded-full transition-all tracking-widest uppercase ${
                     activeYear === year 
                       ? 'bg-primary text-white shadow-md' 
-                      : 'text-slate-500 hover:bg-slate-50'
+                      : 'text-slate-700 hover:bg-slate-50'
                   }`}
                 >
                   {year}
@@ -379,33 +379,33 @@ export default function Publications() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-8 space-y-10">
         <AnimatePresence mode="wait">
           <motion.div 
             key={activeYear}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="space-y-12"
+            className="space-y-10"
           >
             {Object.keys(groupedPubs).sort((a, b) => b.localeCompare(a)).map(year => (
               <section key={year} className="relative">
-                <div className="flex items-baseline gap-5 mb-6">
-                  <h2 className="font-sans font-extrabold text-slate-100 select-none text-4xl leading-none">{year}</h2>
-                  <div className="h-px grow bg-slate-100" />
+                <div className="flex items-baseline gap-4 mb-5">
+                  <h2 className="font-sans font-extrabold text-slate-100 select-none text-2xl leading-none">{year}</h2>
+                  <div className="h-[1px] grow bg-slate-100" />
                 </div>
                 
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {groupedPubs[year].map((pub, i) => (
                     <motion.div 
                       key={i}
                       whileHover={{ x: 5 }}
-                      className="group py-5 border-b border-slate-100 hover:bg-slate-50/50 px-5 -mx-5 transition-all"
+                      className="group py-3 border-b border-slate-50 hover:bg-slate-50/50 px-5 -mx-5 transition-all"
                     >
-                      <h3 className="text-primary font-sans font-extrabold text-lg mb-2 leading-tight group-hover:text-emerald-600 transition-colors">
+                      <h3 className="text-primary font-sans font-extrabold text-[15px] mb-1 leading-snug group-hover:text-tertiary transition-colors">
                         {formatTitle(pub.title)}
                       </h3>
-                      <p className="text-slate-600 font-academic text-sm mb-1.5 leading-relaxed">
+                      <p className="text-slate-600 font-academic text-sm mb-1 leading-relaxed">
                         {pub.authors.split('T. Lee').map((part, index, array) => (
                           <span key={index}>
                             {part}
@@ -414,7 +414,7 @@ export default function Publications() {
                         ))}
                       </p>
                       <div className="flex flex-wrap items-center gap-5">
-                        <p className="text-slate-600 font-academic text-xs italic">
+                        <p className="text-slate-700 font-academic text-sm italic">
                           {(() => {
                             const match = pub.journal.match(/^(.*?)(\s\d+.*|\saccepted.*)$/);
                             if (match) {
@@ -431,9 +431,9 @@ export default function Publications() {
                           href={pub.doi} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-emerald-600 text-[9px] font-bold uppercase tracking-widest hover:underline flex items-center gap-1.5"
+                          className="text-tertiary text-xs font-bold uppercase tracking-widest hover:underline flex items-center gap-1.5"
                         >
-                          <LinkIcon size={10} />
+                          <LinkIcon size={12} />
                           DOI Link
                         </a>
                       </div>

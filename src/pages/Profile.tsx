@@ -53,22 +53,31 @@ export default function Profile() {
       </button>
 
       <header className="mb-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 pb-4 relative">
-          <div>
+        <div className="flex flex-col md:flex-row gap-6 items-start pb-4 relative">
+          <div className="w-24 h-30 bg-slate-100 overflow-hidden rounded-sm shadow-md shrink-0">
+            <img 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Dn3FWUvGWF_N45D6UGcIzjgwqgsoKwoZFXsYyBnRQhH81_WuNej3LlMWZ7U3L-ZrEF99Zy-ZLiRkunLVAUq39LxzqBuz50zUEsoUv87cmz8rbhXTJoo5f9ci2B0FbtQIkmYyco2ukSOVLoVClt9CtOYvFQnCN7iln7Bw5BpscrOOWVh2yyX5RfxxQwtSm0sHdcWPbb6cMl7RhkDeuY2NtR_qlKea--zbOa9IN61EZ18LBa5Aoaax4CUvEieDRsQIRFL3pnM-YQ" 
+              alt="Taehun Lee" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="flex-grow">
             <h1 className="font-sans text-3xl font-extrabold text-primary tracking-tighter mb-1">Taehun Lee</h1>
-            <p className="font-sans text-lg text-slate-400 font-medium">이태훈</p>
-          </div>
-          <div className="flex flex-col gap-1 text-right">
-            <div className="flex items-center justify-end gap-2 text-slate-600">
-              <Mail size={12} className="text-primary" />
-              <span className="font-academic text-xs">taehun.lee@dgist.ac.kr</span>
+            <p className="font-sans text-lg text-slate-600 font-medium mb-2">이태훈</p>
+            <div className="flex items-center gap-3 text-slate-500">
+              <a href="mailto:taehun.lee@dgist.ac.kr" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+                <Mail size={12} className="text-primary" />
+                <span className="font-academic text-xs">taehun.lee@dgist.ac.kr</span>
+              </a>
+              <span className="text-slate-500 text-xs">|</span>
+              <a href="https://scholar.google.com/scholar?q=Taehun+Lee+DGIST" target="_blank" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+                <GraduationCap size={12} className="text-primary" />
+                <span className="font-academic text-xs">Google Scholar</span>
+              </a>
             </div>
-            <div className="flex items-center justify-end gap-2 text-slate-600">
-              <Globe size={12} className="text-primary" />
-              <a href="https://taehun0530.github.io" target="_blank" rel="noopener noreferrer" className="font-academic text-xs hover:underline">taehun0530.github.io</a>
-            </div>
           </div>
-          <div className="absolute bottom-0 left-0 w-12 h-1 bg-emerald-500" />
+          <div className="absolute bottom-0 left-0 w-12 h-1 bg-tertiary" />
         </div>
       </header>
 
@@ -91,11 +100,11 @@ export default function Profile() {
             <div className="space-y-3 ml-3 border-l border-slate-100 pl-6">
               {section.items.map((item, i) => (
                 <div key={i} className="relative">
-                  <div className="absolute -left-[25px] top-1.5 w-1 h-1 rounded-full bg-emerald-500 border-2 border-white shadow-sm" />
-                  <p className="font-sans text-[8px] font-medium text-emerald-600 uppercase tracking-widest mb-0.5">{item.date}</p>
+                  <div className="absolute -left-[25px] top-1.5 w-1 h-1 rounded-full bg-tertiary border-2 border-white shadow-sm" />
+                  <p className="font-sans text-[8px] font-medium text-tertiary uppercase tracking-widest mb-0.5">{item.date}</p>
                   <h3 className="font-academic text-sm font-medium text-slate-800 leading-snug">{item.content}</h3>
                   {item.detail && (
-                    <p className="font-academic text-[11px] text-slate-500 mt-0.5 italic">{item.detail}</p>
+                    <p className="font-academic text-[11px] text-slate-700 mt-0.5 italic">{item.detail}</p>
                   )}
                 </div>
               ))}

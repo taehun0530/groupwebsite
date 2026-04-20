@@ -32,7 +32,7 @@ export default function Navbar() {
               className={`font-sans text-xs font-bold uppercase tracking-widest transition-colors pb-1 border-b-2 ${
                 location.pathname === link.path
                   ? 'text-primary border-primary'
-                  : 'text-slate-500 border-transparent hover:text-primary'
+                  : 'text-slate-700 border-transparent hover:text-primary'
               }`}
             >
               {link.name}
@@ -61,7 +61,7 @@ export default function Navbar() {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={`block font-sans text-sm font-bold uppercase tracking-widest ${
-                  location.pathname === link.path ? 'text-primary' : 'text-slate-500'
+                  location.pathname === link.path ? 'text-primary' : 'text-slate-700'
                 }`}
               >
                 {link.name}
