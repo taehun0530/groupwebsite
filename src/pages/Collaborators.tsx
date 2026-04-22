@@ -48,7 +48,7 @@ export default function Collaborators() {
               <h2 className="text-[10px] font-bold uppercase tracking-widest text-tertiary shrink-0">
                 {group.title}
               </h2>
-              <div className="h-px grow bg-slate-100" />
+              <div className="h-px grow bg-slate-200" />
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

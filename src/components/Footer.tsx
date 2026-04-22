@@ -2,38 +2,45 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-slate-100 py-10">
+    <footer className="bg-white border-t border-slate-200 py-10 mt-auto">
       <div className="max-w-7xl mx-auto px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12">
-          <div className="space-y-4">
-            <div className="space-y-1">
-              <div className="font-sans font-extrabold text-xs uppercase tracking-tighter text-primary">
-                Data-Driven Materials Modeling
-              </div>
-              <p className="font-academic text-[11px] text-slate-700 leading-relaxed uppercase tracking-tight">
-                Energy and Science Engineering Department
-              </p>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+          {/* Main Group Info */}
+          <div className="md:col-span-6 space-y-3">
+            <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-slate-500">
+              Lee Group @DGIST
+            </h4>
+            <div className="font-academic text-[11px] text-slate-400 leading-relaxed tracking-tight space-y-1">
+              <p>Data-driven Materials Modeling Group</p>
+              <p>Department of Energy Science and Engineering,<br/>Daegu Gyeongbuk Institute of Science & Technology (DGIST)</p>
             </div>
-            <p className="font-sans text-[10px] text-slate-600 uppercase tracking-[0.2em] font-medium">
-              © 2026. All rights reserved.
+          </div>
+
+          {/* Contact */}
+          <div className="md:col-span-3 space-y-2">
+            <h5 className="font-sans font-bold text-[10px] uppercase tracking-widest text-slate-500">Contact</h5>
+            <p className="font-academic text-[11px] text-slate-400">
+              <a href="mailto:taehun.lee@dgist.ac.kr" className="hover:text-slate-600 transition-colors">
+                taehun.lee@dgist.ac.kr
+              </a>
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16">
-            <div className="space-y-2">
-              <h5 className="font-sans font-bold text-[10px] uppercase tracking-widest text-slate-600">Office</h5>
-              <p className="font-academic text-[11px] text-slate-700">
-                E6-414
-              </p>
-            </div>
-            <div className="space-y-2">
-              <h5 className="font-sans font-bold text-[10px] uppercase tracking-widest text-slate-600">Location</h5>
-              <address className="not-italic font-academic text-[11px] text-slate-700 leading-relaxed">
-                333, Techno Jungang-daero,<br />
-                Daegu, South Korea
-              </address>
-            </div>
+          {/* Location */}
+          <div className="md:col-span-3 space-y-2">
+            <h5 className="font-sans font-bold text-[10px] uppercase tracking-widest text-slate-500">Location</h5>
+            <address className="not-italic font-academic text-[11px] text-slate-400 leading-relaxed">
+              E6-414<br />
+              333, Techno Jungang-daero,<br />
+              Daegu, South Korea
+            </address>
           </div>
+        </div>
+
+        <div className="mt-3 pt-3 border-t border-slate-200">
+          <p className="font-sans text-[9px] text-slate-400 uppercase tracking-widest font-medium">
+            © 2026 Lee Group. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

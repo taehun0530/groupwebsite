@@ -38,7 +38,7 @@ export default function FormerCollaborators() {
         <section>
           <div className="flex items-center gap-4 mb-8">
             <h2 className="font-sans text-xs font-bold text-primary uppercase tracking-[0.2em] whitespace-nowrap">Theory</h2>
-            <div className="h-px w-full bg-slate-100"></div>
+            <div className="h-px w-full bg-slate-200"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {theoryList.map((person, i) => (
@@ -60,7 +60,7 @@ export default function FormerCollaborators() {
         <section>
           <div className="flex items-center gap-4 mb-8">
             <h2 className="font-sans text-xs font-bold text-primary uppercase tracking-[0.2em] whitespace-nowrap">Experiment</h2>
-            <div className="h-px w-full bg-slate-100"></div>
+            <div className="h-px w-full bg-slate-200"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {experimentList.map((person, i) => (

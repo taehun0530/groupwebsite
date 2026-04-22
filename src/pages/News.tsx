@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, ChevronRight, Tag } from 'lucide-react';
 
@@ -7,9 +8,9 @@ export type NewsCategory = 'Publications' | 'Awards' | 'People' | 'Talks' | 'Vis
 export interface NewsItem {
   id: string;
   date: string;
-  title: string;
+  title: string | ReactNode;
   category: NewsCategory;
-  summary?: string;
+  summary?: string | ReactNode;
   hasDetail?: boolean;
 }
 
@@ -24,9 +25,9 @@ export const newsData: NewsItem[] = [
   {
     id: 'pub-mos2-2026',
     date: '2026.03.18',
-    title: 'New Publication: Mechanistic Origins of Structural Failure in Deeply‐Lithiated LixMoS2',
+    title: <>New Publication: Mechanistic Origins of Structural Failure in Deeply‐Lithiated Li<sub>x</sub>MoS<sub>2</sub></>,
     category: 'Publications',
-    summary: 'Published in Energy & Environmental Materials. This study explores the structural failure mechanisms in molybdenum disulfide during deep lithiation.',
+    summary: <>Published in <i>Energy & Environmental Materials</i> (IF = 15.0). This study explores the structural failure mechanisms in molybdenum disulfide during deep lithiation.</>,
     hasDetail: true,
   },
   {
@@ -46,26 +47,26 @@ export const newsData: NewsItem[] = [
   {
     id: 'pub-iro2-2026',
     date: '2026.01.15',
-    title: 'New Publication: Atomistic Insights into the Electrochemical Oxygen Evolution Activity of Hollandite IrO2 Surfaces',
+    title: <>New Publication: Atomistic Insights into the Electrochemical Oxygen Evolution Activity of Hollandite IrO<sub>2</sub> Surfaces</>,
     category: 'Publications',
-    summary: 'Published in Advanced Science. A comprehensive study on the electrochemical activity of IrO2 surfaces using atomistic simulations.',
+    summary: <>Published in <i>Advanced Science</i> (IF = 15.1). A comprehensive study on the electrochemical activity of IrO<sub>2</sub> surfaces using atomistic simulations.</>,
     hasDetail: true,
   },
 ];
 
 export default function News() {
   return (
-    <div className="pt-20 pb-12 max-w-4xl mx-auto px-8">
-      <header className="mb-10">
-        <h1 className="font-sans text-2xl md:text-3xl font-extrabold text-primary tracking-tighter mb-3">
+    <div className="pt-24 pb-20 max-w-4xl mx-auto px-8">
+      <header className="mb-10 pb-6 border-b border-slate-200">
+        <h1 className="font-sans text-2xl md:text-4xl font-extrabold text-primary tracking-tighter mb-2">
           News
         </h1>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-sm">
+        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-sm font-light opacity-90">
           Recent updates from our lab, including publications, awards, and team activities.
         </p>
       </header>
 
-      <div className="space-y-10">
+      <div className="space-y-8">
         {newsData.map((item, i) => (
           <motion.article 
             key={item.id}
@@ -80,8 +81,8 @@ export default function News() {
                 <Calendar size={12} className="text-tertiary" />
                 {item.date}
               </div>
-              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-slate-50 text-slate-600 rounded-sm text-[9px] font-bold uppercase tracking-widest group-hover:bg-slate-100 group-hover:text-primary transition-colors">
-                <Tag size={10} />
+              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-slate-50 text-tertiary rounded-sm text-[9px] font-bold uppercase tracking-widest group-hover:bg-slate-100 transition-colors">
+                <Tag size={10} className="text-tertiary" />
                 {item.category}
               </div>
             </div>

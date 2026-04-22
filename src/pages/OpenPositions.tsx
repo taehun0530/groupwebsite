@@ -3,25 +3,22 @@ import { motion } from 'motion/react';
 
 export default function OpenPositions() {
   return (
-    <div className="pt-20 pb-12 max-w-5xl mx-auto px-8">
-      <header className="mb-8">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-2xl md:text-3xl font-extrabold text-primary tracking-tighter mb-2"
-        >
+    <div className="pt-24 pb-20 max-w-5xl mx-auto px-8">
+      {/* Header Section */}
+      <header className="mb-10 pb-8 border-b border-slate-200">
+        <h1 className="font-sans text-2xl md:text-4xl font-extrabold text-primary tracking-tighter mb-3">
           Open Positions
-        </motion.h1>
-        <p className="text-sm text-slate-700 font-academic leading-relaxed max-w-3xl">
+        </h1>
+        <p className="font-academic text-slate-700 leading-relaxed text-sm font-light opacity-90">
           We are seeking motivated researchers to join our computational materials design group.
         </p>
       </header>
 
       {/* Opportunities */}
-      <section className="space-y-8 mb-12">
-        <div className="flex items-center gap-4 mb-5">
-          <h2 className="text-[10px] font-bold uppercase tracking-widest text-slate-900 shrink-0">Available Opportunities</h2>
-          <div className="h-px grow bg-slate-100" />
+      <section className="space-y-6 mb-12">
+        <div className="flex items-center gap-4 mb-4">
+          <h2 className="text-[10px] font-bold uppercase tracking-widest text-tertiary shrink-0">Available Opportunities</h2>
+          <div className="h-px grow bg-slate-200" />
         </div>
 
         {[
@@ -37,16 +34,16 @@ export default function OpenPositions() {
           }
         ].map((pos, i) => (
           <div key={i} className="group">
-            <div className="grid md:grid-cols-12 gap-5 items-start">
+            <div className="grid md:grid-cols-12 gap-3 md:gap-8 items-start">
               <div className="md:col-span-4">
                 <h3 className="font-sans font-extrabold text-base md:text-lg text-primary group-hover:text-tertiary transition-colors leading-tight">{pos.title}</h3>
               </div>
-              <div className="md:col-span-8 space-y-2">
+              <div className="md:col-span-8 space-y-1.5">
                 <p className="text-sm text-slate-700 font-academic leading-relaxed">{pos.reqs}</p>
                 {pos.pref && <p className="text-xs text-slate-600 font-academic italic leading-relaxed">{pos.pref}</p>}
               </div>
             </div>
-            {i < 1 && <div className="mt-8 h-px w-full bg-slate-50" />}
+            {i < 1 && <div className="mt-6 h-px w-full bg-slate-50" />}
           </div>
         ))}
       </section>
@@ -54,8 +51,8 @@ export default function OpenPositions() {
       {/* Research Projects */}
       <section className="space-y-6 mb-12">
         <div className="flex items-center gap-4 mb-5">
-          <h2 className="text-[10px] font-bold uppercase tracking-widest text-slate-900 shrink-0">Available Research Projects</h2>
-          <div className="h-px grow bg-slate-100" />
+          <h2 className="text-[10px] font-bold uppercase tracking-widest text-tertiary shrink-0">Available Research Projects</h2>
+          <div className="h-px grow bg-slate-200" />
         </div>
 
         <div className="grid gap-4">

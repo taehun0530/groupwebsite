@@ -33,7 +33,7 @@ export default function NewsItem() {
             </dl>
           </div>
           <p className="font-academic text-base leading-relaxed text-slate-600">
-            This research highlights the mechanistic origins of structural degradation in MoS2 during lithiation. Using atomistic insights, we identify critical pathways that lead to failure, providing a roadmap for designing more resilient electrode materials.
+            This research highlights the mechanistic origins of structural degradation in MoS<sub>2</sub> during lithiation. Using atomistic insights, we identify critical pathways that lead to failure, providing a roadmap for designing more resilient electrode materials.
           </p>
         </div>
       );
@@ -59,7 +59,7 @@ export default function NewsItem() {
             </dl>
           </div>
           <p className="font-academic text-base leading-relaxed text-slate-600">
-            Hollandite-type IrO2 exhibits unique electrochemical properties. Our work provides the first comprehensive atomistic analysis of its surface activity during the oxygen evolution reaction (OER), revealing why certain surfaces out-perform traditional catalysts.
+            Hollandite-type IrO<sub>2</sub> exhibits unique electrochemical properties. Our work provides the first comprehensive atomistic analysis of its surface activity during the oxygen evolution reaction (OER), revealing why certain surfaces out-perform traditional catalysts.
           </p>
         </div>
       );

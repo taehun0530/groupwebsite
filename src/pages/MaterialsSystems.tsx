@@ -43,21 +43,21 @@ const systems = [
 
 export default function MaterialsSystems() {
   return (
-    <div className="pt-20 pb-12 max-w-5xl mx-auto px-8">
+    <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
       <Link 
         to="/" 
-        className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-6"
+        className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-8"
       >
         <ChevronLeft size={14} /> Back to Home
       </Link>
 
       <header className="mb-10">
-        <h1 className="font-sans text-2xl md:text-3xl font-extrabold text-primary tracking-tighter mb-3">
+        <h1 className="font-sans text-2xl md:text-4xl font-extrabold text-primary tracking-tighter">
           Materials Systems of Interest
         </h1>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-sm italic">
+        <div className="mt-4 font-academic text-sm font-light text-slate-700 max-w-3xl leading-relaxed pl-4 border-l-2 border-slate-200">
           Exploring the frontiers of functional materials through advanced atomistic modeling and data-driven insights.
-        </p>
+        </div>
       </header>
 
       <div className="space-y-16">
@@ -72,22 +72,22 @@ export default function MaterialsSystems() {
             id={system.id}
           >
             <div className={i % 2 === 1 ? 'md:order-2' : ''}>
-              <div className="mb-3">
-                <span className="text-[9px] font-bold text-tertiary uppercase tracking-[0.2em]">Material System {i + 1}</span>
-                <h2 className="font-sans text-xl font-extrabold text-primary tracking-tight mt-1 mb-4 leading-tight">
+              <div className="mb-2">
+                <span className="text-[10px] font-bold text-tertiary uppercase tracking-widest">SUB-SYSTEM {String(i + 1).padStart(2, '0')}</span>
+                <h2 className="font-sans text-xl md:text-2xl font-extrabold text-primary tracking-tighter mt-1 mb-4 leading-tight">
                   {system.title}
                 </h2>
               </div>
-              <p className="font-academic text-slate-700 leading-relaxed text-sm">
+              <p className="font-academic text-sm font-light text-slate-700 leading-relaxed">
                 {system.content}
               </p>
             </div>
             <div className={i % 2 === 1 ? 'md:order-1' : ''}>
-              <div className="aspect-[4/3] overflow-hidden bg-slate-100 shadow-xl rounded-sm border border-slate-200 group">
+              <div className="aspect-[16/10] overflow-hidden bg-slate-50 shadow-2xl rounded-sm border border-slate-100 group">
                 <img 
                   src={system.img} 
                   alt={system.title} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
               </div>
