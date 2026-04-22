@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav className="sticky top-0 w-full z-50 glass-nav border-b border-slate-200/50">
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
         <Link to="/" className="font-sans font-extrabold text-lg tracking-tighter text-primary shrink-0">
-          Lee Group @ DGIST
+          Lee Group @ DGIST ESE
         </Link>
 
         {/* Desktop Nav */}

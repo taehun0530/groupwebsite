@@ -53,7 +53,7 @@ export default function Alumni() {
               <p className="font-academic text-xs text-slate-600 font-medium">{alumni.role}</p>
             </div>
             {alumni.next && (
-              <p className="font-academic text-sm text-tertiary font-bold italic md:text-right">{alumni.next}</p>
+              <p className="font-academic text-[11px] text-tertiary font-bold italic md:text-right">{alumni.next}</p>
             )}
           </motion.div>
         ))}
