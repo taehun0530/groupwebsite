@@ -9,8 +9,8 @@ export default function Home() {
       <section className="relative min-h-[35vh] flex items-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0 opacity-40">
           <img 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Dn3FWUvGWF_N45D6UGcIzjgwqgsoKwoZFXsYyBnRQhH81_WuNej3LlMWZ7U3L-ZrEF99Zy-ZLiRkunLVAUq39LxzqBuz50zUEsoUv87cmz8rbhXTJoo5f9ci2B0FbtQIkmYyco2ukSOVLoVClt9CtOYvFQnCN7iln7Bw5BpscrOOWVh2yyX5RfxxQwtSm0sHdcWPbb6cMl7RhkDeuY2NtR_qlKea--zbOa9IN61EZ18LBa5Aoaax4CUvEieDRsQIRFL3pnM-YQ" 
-            alt="Atomic structure" 
+            src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&q=80&w=2000" 
+            alt="Atomic structure visualization" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -146,9 +146,9 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { title: 'Stability Analysis', icon: <BarChart3 className="w-4 h-4" />, img: 'https://picsum.photos/seed/stability/400/400' },
-              { title: 'Operando Structure Models', icon: <Zap className="w-4 h-4" />, img: 'https://picsum.photos/seed/microscope/400/400' },
-              { title: 'Data-driven Design', icon: <Brain className="w-4 h-4" />, img: 'https://picsum.photos/seed/data/400/400' },
+              { title: 'Complex Structure Discovery', icon: <BarChart3 className="w-4 h-4" />, img: 'https://picsum.photos/seed/stability/400/400' },
+              { title: 'Electrochemical Interfacial Reactivity', icon: <Zap className="w-4 h-4" />, img: 'https://picsum.photos/seed/microscope/400/400' },
+              { title: 'Data-Driven Materials Design', icon: <Brain className="w-4 h-4" />, img: 'https://picsum.photos/seed/data/400/400' },
             ].map((theme, i) => (
               <motion.div 
                 key={i}
@@ -266,37 +266,11 @@ export default function Home() {
           </div>
           
           {/* Workflow Diagram */}
-          <div className="relative mt-8 w-full max-w-5xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-6">
+          <div className="relative mt-8 w-full max-w-3xl mx-auto">
+            <div className="flex flex-col items-center">
                
-               {/* Left Column: HPC Infrastructure */}
-               <div className="w-full lg:w-[22%] flex flex-col items-center">
-                 <div className="flex flex-col items-center mb-3 w-full">
-                   <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 bg-slate-50/80 px-3 py-1 rounded-full border border-slate-100/50">FOUNDATION</span>
-                 </div>
-                 <div className="bg-slate-50/40 w-[90%] aspect-square border border-slate-100 rounded-full flex flex-col items-center justify-center text-center shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:bg-slate-50 transition-all p-6">
-                    <div className="flex flex-col items-center gap-2.5">
-                      <div className="text-slate-400 shrink-0">
-                        <Server size={20} />
-                      </div>
-                      <h4 className="font-sans font-bold text-primary/80 text-[13px] leading-tight max-w-[120px]">Computational Framework</h4>
-                    </div>
-                 </div>
-               </div>
-
-               {/* Arrow Left-to-Middle */}
-               <div className="flex lg:hidden justify-center text-slate-400 py-1">
-                 <ArrowDown size={18} strokeWidth={1.5} />
-               </div>
-               <div className="hidden lg:flex shrink-0 items-center justify-center pt-8 text-slate-300">
-                  <ArrowRight size={24} strokeWidth={1.5} />
-               </div>
-
                {/* Middle Column: The 4 Methods */}
-               <div className="w-full lg:w-[48%] flex flex-col z-10">
-                 <div className="flex flex-col items-center mb-3 w-full">
-                   <span className="text-[10px] font-bold uppercase tracking-widest text-sky-600 bg-sky-50/80 px-3 py-1 rounded-full border border-sky-100/50">METHODS</span>
-                 </div>
+               <div className="w-full flex flex-col z-10">
                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 flex-1">
                    {[
                      { title: 'Data Science & Automation', icon: <Database size={16} />, bullets: ['Automated calculation workflows', 'Machine-learning analysis for materials discovery'] },
@@ -309,13 +283,13 @@ export default function Home() {
                           <div className="text-sky-500 mt-0.5 shrink-0 bg-sky-50/50 p-1 rounded-sm">
                             {method.icon}
                           </div>
-                          <h4 className="font-sans font-bold text-primary text-[13px] leading-tight pt-0.5">
+                          <h4 className="font-sans font-bold text-primary text-sm leading-tight pt-0.5">
                             {method.title}
                           </h4>
                         </div>
                         <ul className="space-y-1 pl-6">
                           {method.bullets.map((b, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-[11px] text-slate-600 font-academic leading-relaxed text-left">
+                            <li key={idx} className="flex items-start gap-2 text-xs text-slate-700 font-academic leading-relaxed text-left">
                               <div className="w-[3px] h-[3px] rounded-full bg-sky-200 mt-[7px] shrink-0"></div>
                               <span>{b}</span>
                             </li>
@@ -325,29 +299,6 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
-
-               {/* Arrow Middle-to-Right */}
-               <div className="flex lg:hidden justify-center text-slate-400 py-1">
-                 <ArrowDown size={18} strokeWidth={1.5} />
-               </div>
-               <div className="hidden lg:flex shrink-0 items-center justify-center pt-8 text-slate-300">
-                  <ArrowRight size={24} strokeWidth={1.5} />
-               </div>
-
-               {/* Right Column: Outcomes */}
-               <div className="w-full lg:w-[22%] flex flex-col items-center">
-                 <div className="flex flex-col items-center mb-3 w-full">
-                   <span className="text-[10px] font-bold uppercase tracking-widest text-indigo-500 bg-indigo-50/80 px-3 py-1 rounded-full border border-indigo-100/50">OUTCOMES</span>
-                 </div>
-                 <div className="bg-indigo-50/40 w-[90%] aspect-square border border-indigo-100 rounded-full flex flex-col items-center justify-center text-center shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:bg-indigo-50 transition-all p-6">
-                    <div className="flex flex-col items-center gap-2.5">
-                      <div className="text-indigo-500/80 shrink-0">
-                        <Hexagon size={20} />
-                      </div>
-                      <h4 className="font-sans font-bold text-primary/80 text-[13px] leading-tight max-w-[120px]">Materials Structure & Properties</h4>
-                    </div>
-                 </div>
-               </div>
 
             </div>
           </div>

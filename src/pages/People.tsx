@@ -39,9 +39,9 @@ export default function People() {
               className="aspect-square bg-slate-100 overflow-hidden rounded-md group shadow-md"
             >
               <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Dn3FWUvGWF_N45D6UGcIzjgwqgsoKwoZFXsYyBnRQhH81_WuNej3LlMWZ7U3L-ZrEF99Zy-ZLiRkunLVAUq39LxzqBuz50zUEsoUv87cmz8rbhXTJoo5f9ci2B0FbtQIkmYyco2ukSOVLoVClt9CtOYvFQnCN7iln7Bw5BpscrOOWVh2yyX5RfxxQwtSm0sHdcWPbb6cMl7RhkDeuY2NtR_qlKea--zbOa9IN61EZ18LBa5Aoaax4CUvEieDRsQIRFL3pnM-YQ" 
+                src="/images/taehun_lee_pi.jpg" 
                 alt="Taehun Lee" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover object-[center_0%] transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
             </motion.div>
@@ -115,7 +115,7 @@ export default function People() {
               name: 'Hyunjin Lee', 
               ko: '이현진', 
               role: '박사과정 (Ph.D.)', 
-              period: 'Since Mar 2024',
+              period: 'Since Sep 2026',
               affiliation: 'DGIST',
               tags: ['Defects', 'MLIP Dev'],
               img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBI8gmjcilKm_k3PCfPV37kciyfGGv25-g_49-NgZTUm858MF7MjJUp5_HowhvmLLMyS4mLtwnrBlKO97V0cTYB8e-9rHGS2iFbCM3DG4f6WSJTdcTrnfVAL4bqzDJImyvY2mvYE-cOk9lhBIi9UUWtMAHirUJwZsDsnVz8vJ_V1sIjWDwxNmB-YvdaxNoLX7AaDGRP_HEqQo9JeAwsQDDeVbdrFVxXOxgXW9Ne-3lfhrSR1Q6I3xLY11X6RFVbRNdhYJW2C8RfSw'
@@ -124,7 +124,7 @@ export default function People() {
               name: 'Kyunghun Lee', 
               ko: '이경훈', 
               role: '통합과정 (Int. M.S./Ph.D.)', 
-              period: 'Since Mar 2024',
+              period: 'Since Sep 2026',
               affiliation: 'DGIST',
               tags: ['Defects', 'MLIP Dev'],
               img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCdkfamMJwjzE9nmAikuTLbgrANwlrI5kaS5eas8zHnG7GRgQ9_MVErW1aSFvkCm4lxbSDEm1qT7heTQ_926Xkq8JBw8ipUWo3Jl0CrT-PIRqm0IFhx7JlNtrnZepSqM2qeiQ-ceuaOjPWAIgK97dRe4oSJLCvQUyH6Wmn6nIPdqpN7kJi2NGA8n1UG4Kht6Zsx4oNzl1gOuT7_b8nPwUPgQ45TmIRRln47It8n5dAbqEgJQeaBwLBHM1FoOsqG9duMjNyXfd7DHw'
@@ -174,7 +174,7 @@ export default function People() {
               name: 'Taeyoung Kim', 
               ko: '김태영', 
               role: '학부생 연구원', 
-              period: 'Since Mar 2024',
+              period: 'Since Jan 2026',
               affiliation: 'Jeonbuk National University',
               tags: ['Electrocatalysis'],
               img: 'https://picsum.photos/seed/taeyoung/400/400'
@@ -183,18 +183,18 @@ export default function People() {
               name: 'Chanju Kim', 
               ko: '김찬주', 
               role: '학부생 연구원', 
-              period: 'Since Mar 2024',
+              period: 'Since Jan 2026',
               affiliation: 'Jeonbuk National University',
-              tags: ['Materials Simulation'],
+              tags: ['Grand-canonical MD'],
               img: 'https://picsum.photos/seed/chanju/400/400'
             },
             { 
               name: 'Jongbeom Park', 
               ko: '박종범', 
               role: '학부생 연구원', 
-              period: 'Since Mar 2024',
+              period: 'Since Jan 2026',
               affiliation: 'Jeonbuk National University',
-              tags: ['Atomistic Modeling'],
+              tags: ['reaction network analysis'],
               img: 'https://picsum.photos/seed/jongbeom/400/400'
             },
           ].map((student, i) => (

@@ -56,9 +56,9 @@ export default function Profile() {
         <div className="flex flex-col md:flex-row gap-6 items-start pb-4 relative">
           <div className="w-24 h-30 bg-slate-100 overflow-hidden rounded-sm shadow-md shrink-0">
             <img 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Dn3FWUvGWF_N45D6UGcIzjgwqgsoKwoZFXsYyBnRQhH81_WuNej3LlMWZ7U3L-ZrEF99Zy-ZLiRkunLVAUq39LxzqBuz50zUEsoUv87cmz8rbhXTJoo5f9ci2B0FbtQIkmYyco2ukSOVLoVClt9CtOYvFQnCN7iln7Bw5BpscrOOWVh2yyX5RfxxQwtSm0sHdcWPbb6cMl7RhkDeuY2NtR_qlKea--zbOa9IN61EZ18LBa5Aoaax4CUvEieDRsQIRFL3pnM-YQ" 
+              src="/images/taehun_lee_pi.jpg" 
               alt="Taehun Lee" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[center_0%]"
               referrerPolicy="no-referrer"
             />
           </div>
