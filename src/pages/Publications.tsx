@@ -345,18 +345,20 @@ export default function Publications() {
     <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
       <header className="mb-8">
         <h1 className="font-sans font-extrabold text-2xl md:text-4xl tracking-tighter text-primary">Publications</h1>
-        <a 
-          href="https://scholar.google.com/scholar?q=Taehun+Lee+DGIST" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-tertiary font-sans text-[10px] font-bold uppercase tracking-[0.15em] hover:text-primary transition-colors mt-4 border-b border-tertiary/20 pb-0.5 w-fit"
-        >
-          Google Scholar Profile <ArrowUpRight size={12} />
-        </a>
+        <div className="flex flex-col gap-2 mt-4">
+          <a 
+            href="https://scholar.google.com/scholar?q=Taehun+Lee+DGIST" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-tertiary font-sans text-[10px] font-bold uppercase tracking-[0.15em] hover:text-primary transition-colors border-b border-tertiary/20 pb-0.5 w-fit"
+          >
+            Google Scholar Profile <ArrowUpRight size={12} />
+          </a>
+        </div>
       </header>
 
       {/* Filter */}
-      <section className="sticky top-16 z-40 bg-white/80 backdrop-blur-md mb-8 border-b border-slate-200">
+      <section className="sticky top-16 z-40 bg-white/80 backdrop-blur-md mb-4 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-8 py-2.5">
           <div className="flex items-center gap-5 overflow-x-auto no-scrollbar">
             <div className="flex gap-1.5">
@@ -377,6 +379,13 @@ export default function Publications() {
           </div>
         </div>
       </section>
+
+      <div className="max-w-7xl mx-auto px-8 mb-4">
+        <div className="flex items-center justify-start gap-4 text-slate-500 font-academic text-[12px] whitespace-nowrap">
+          <span># Corresponding author</span>
+          <span>† First author</span>
+        </div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-8 space-y-6">
         <AnimatePresence mode="wait">

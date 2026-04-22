@@ -17,25 +17,27 @@ import MaterialsSystems from './pages/MaterialsSystems';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-white">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/research" element={<Research />} />
-            <Route path="/people" element={<People />} />
-            <Route path="/people/alumni" element={<Alumni />} />
-            <Route path="/people/collaborators" element={<Collaborators />} />
-            <Route path="/people/former-collaborators" element={<FormerCollaborators />} />
-            <Route path="/publications" element={<Publications />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/news/:id" element={<NewsItem />} />
-            <Route path="/materials-systems" element={<MaterialsSystems />} />
-            <Route path="/open-positions" element={<OpenPositions />} />
-            <Route path="/profile/taehun-lee" element={<Profile />} />
-          </Routes>
-        </main>
-        <Footer />
+      <div className="min-h-screen bg-slate-50 flex flex-col items-center">
+        <div className="w-full max-w-[1000px] flex flex-col flex-grow bg-white shadow-2xl relative">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/research" element={<Research />} />
+              <Route path="/people" element={<People />} />
+              <Route path="/people/alumni" element={<Alumni />} />
+              <Route path="/people/collaborators" element={<Collaborators />} />
+              <Route path="/people/former-collaborators" element={<FormerCollaborators />} />
+              <Route path="/publications" element={<Publications />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/news/:id" element={<NewsItem />} />
+              <Route path="/materials-systems" element={<MaterialsSystems />} />
+              <Route path="/open-positions" element={<OpenPositions />} />
+              <Route path="/profile/taehun-lee" element={<Profile />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </div>
     </Router>
   );

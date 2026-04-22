@@ -57,12 +57,29 @@ export default function Home() {
             <h2 className="font-sans text-lg font-extrabold text-primary tracking-tight">Research Overview</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-6 space-y-6">
-              <div className="space-y-3">
-                <p className="text-sm font-light text-slate-700 font-academic leading-relaxed text-left">
-                  We combine computational materials science and machine learning to understand, predict, and design the structure, stability, reactivity, and performance of functional materials at the atomic scale under realistic operating conditions.
-                </p>
+          <div className="flex flex-col gap-8">
+            <div className="space-y-4">
+              <p className="text-sm font-light text-slate-700 font-academic leading-relaxed text-left">
+                We combine computational materials science and machine learning to understand, predict, and design the structure, stability, reactivity, and performance of functional materials at the atomic scale under realistic operating conditions.
+              </p>
+            </div>
+
+            <div className="w-full flex justify-center">
+              <motion.div 
+                whileHover={{ scale: 1.002 }}
+                className="w-full max-w-2xl overflow-hidden bg-white shadow-sm border border-slate-100 rounded-sm"
+              >
+                <img 
+                  src="/images/overall.png" 
+                  alt="Research Overall Graphic" 
+                  className="w-full h-auto"
+                  referrerPolicy="no-referrer"
+                />
+              </motion.div>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="space-y-4">
                 <p className="text-sm font-light text-slate-700 font-academic leading-relaxed text-left">
                   Building on physics-based modeling with density functional theory (DFT), we integrate machine-learned interatomic potentials (MLIPs), automated computational workflows, data-driven screening, and generative models to investigate complex surfaces, interfaces, defects, amorphous structures, and their structure–property relationships.
                 </p>
@@ -70,7 +87,7 @@ export default function Home() {
                   Our primary materials of interest include photoelectrochemical and electrocatalytic oxides, high-k dielectric oxides, and their nanostructured and disordered forms.
                 </p>
               </div>
-              <div className="space-y-3 pl-3 border-l-2 border-accent-blue/30 opacity-80">
+              <div className="space-y-4 pl-3 border-l-2 border-accent-blue/30 opacity-80">
                 <p className="text-[13px] text-slate-600 font-academic leading-relaxed italic text-left break-keep">
                   우리는 계산재료과학과 머신러닝을 결합하여, 실제 환경에서 기능성 재료의 구조, 안정성, 반응성, 성능을 원자 수준에서 이해하고 예측하며 설계합니다. 밀도범함수이론(DFT)에 기반한 물리 모델링을 바탕으로, 우리는 machine-learned interatomic potentials (MLIPs), 자동화 계산 워크플로, 데이터 기반 스크리닝, 생성 모델을 통합하여 복잡한 표면, 계면, 결함, 비정질 구조를 탐구하고, 그 구조–물성 관계를 연구합니다.
                 </p>
@@ -78,19 +95,6 @@ export default function Home() {
                   주요 관심 소재는 광전기화학 및 전기촉매 산화물, high-k 유전체 산화물, 그리고 이들의 나노구조 및 무질서 구조체입니다.
                 </p>
               </div>
-            </div>
-            <div className="md:col-span-6 h-full">
-              <motion.div 
-                whileHover={{ scale: 1.005 }}
-                className="w-full h-full min-h-[300px] overflow-hidden bg-white shadow-sm border border-slate-100 rounded-sm"
-              >
-                <img 
-                  src="https://lh3.googleusercontent.com/aida/ADBb0uie2XqsazuXMLc3xCEsYl1Z0TXsC7TE5RX752ur7zjSXdbEP3UYYBI2_u92pRbC_HrTorToH6sbXEBtTG5dr0MNwxOe09Rw-k_HzCZrwF-2GaiE-yXyzaDdVrtOm1B_0Jph2QKNL_dC5SwRz4HME5_7SGGYatqFttOx0LARH8uvru9JWvBlARF4R9NLSLeKAZyhr94UTorDBcxhH9hMoVSl8XCpdUGQisQLxfwjrj_WVSipEIynkBMmZDnUnMVILRxFs1qCAcMECEU" 
-                  alt="Research Graphic" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  referrerPolicy="no-referrer"
-                />
-              </motion.div>
             </div>
           </div>
         </div>
@@ -144,31 +148,36 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-2xl mx-auto">
             {[
-              { title: 'Complex Structure Discovery', icon: <BarChart3 className="w-4 h-4" />, img: 'https://picsum.photos/seed/stability/400/400' },
-              { title: 'Electrochemical Interfacial Reactivity', icon: <Zap className="w-4 h-4" />, img: 'https://picsum.photos/seed/microscope/400/400' },
-              { title: 'Data-Driven Materials Design', icon: <Brain className="w-4 h-4" />, img: 'https://picsum.photos/seed/data/400/400' },
+              { id: 'complex-structure', title: 'Complex Structure Discovery', icon: <BarChart3 className="w-4 h-4" />, img: '/images/topic1.png' },
+              { id: 'operando-reactivity', title: 'Electrochemical Interfacial Reactivity', icon: <Zap className="w-4 h-4" />, img: '/images/topic2.png' },
+              { id: 'data-driven-inverse', title: 'Data-Driven Materials Design', icon: <Brain className="w-4 h-4" />, img: 'https://picsum.photos/seed/data/400/400' },
             ].map((theme, i) => (
-              <motion.div 
+              <Link 
                 key={i}
-                whileHover={{ y: -3 }}
-                className="group bg-white flex flex-col items-center text-center aspect-square border border-slate-100 hover:shadow-lg transition-all duration-500 overflow-hidden relative rounded-sm"
+                to={`/research?theme=${theme.id}`}
+                className="block"
               >
-                <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity">
-                  <img src={theme.img} alt={theme.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                </div>
-                <div className="relative z-10 p-4 flex flex-col items-center justify-center h-full w-full bg-white/60 backdrop-blur-[2px] group-hover:bg-white/40 transition-colors">
-                  <div className="w-8 h-8 bg-primary/10 flex items-center justify-center mb-2 text-primary rounded-full">
-                    {theme.icon}
+                <motion.div 
+                  whileHover={{ y: -3 }}
+                  className="group bg-white flex flex-col items-center text-center aspect-square border border-slate-100 hover:shadow-lg transition-all duration-500 overflow-hidden relative rounded-sm"
+                >
+                    <div className="absolute inset-0 z-0 opacity-40 transition-opacity">
+                      <img src={theme.img} alt={theme.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    </div>
+                  <div className="relative z-10 p-3 flex flex-col items-center justify-center h-full w-full bg-white/60 backdrop-blur-[2px] group-hover:bg-white/40 transition-colors">
+                    <div className="w-7 h-7 bg-primary/10 flex items-center justify-center mb-1.5 text-primary rounded-full">
+                      {theme.icon}
+                    </div>
+                    <h3 className="font-sans text-[11px] font-bold text-primary px-1 leading-tight">{theme.title}</h3>
+                    <div className="mt-1.5 font-sans text-[8px] font-bold tracking-widest text-tertiary uppercase flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span>View</span>
+                      <ArrowRight size={8} />
+                    </div>
                   </div>
-                  <h3 className="font-sans text-sm font-bold text-primary px-2 leading-tight">{theme.title}</h3>
-                  <div className="mt-2 font-sans text-[9px] font-bold tracking-widest text-tertiary uppercase flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span>View</span>
-                    <ArrowRight size={10} />
-                  </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

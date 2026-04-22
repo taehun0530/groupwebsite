@@ -54,24 +54,18 @@ export default function Profile() {
 
       <header className="mb-8">
         <div className="flex flex-col md:flex-row gap-6 items-start pb-4 relative">
-          <div className="w-24 h-30 bg-slate-100 overflow-hidden rounded-sm shadow-md shrink-0">
-            <img 
-              src="/images/taehun_lee_pi.jpg" 
-              alt="Taehun Lee" 
-              className="w-full h-full object-cover object-[center_0%]"
-              referrerPolicy="no-referrer"
-            />
-          </div>
           <div className="flex-grow">
-            <h1 className="font-sans text-3xl font-extrabold text-primary tracking-tighter mb-1">Taehun Lee</h1>
-            <p className="font-sans text-lg text-slate-600 font-medium mb-2">이태훈</p>
-            <div className="flex items-center gap-3 text-slate-500">
+            <div className="flex flex-wrap items-baseline gap-3 mb-2">
+              <h1 className="font-sans text-3xl font-extrabold text-primary tracking-tighter">Taehun Lee</h1>
+              <span className="font-sans text-lg text-slate-500 font-medium">(이태훈)</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-slate-500">
               <a href="mailto:taehun.lee@dgist.ac.kr" className="flex items-center gap-1.5 hover:text-primary transition-colors">
                 <Mail size={12} className="text-primary" />
                 <span className="font-academic text-xs">taehun.lee@dgist.ac.kr</span>
               </a>
-              <span className="text-slate-500 text-xs">|</span>
-              <a href="https://scholar.google.com/scholar?q=Taehun+Lee+DGIST" target="_blank" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+              <span className="hidden md:inline text-slate-300 text-xs text-center">|</span>
+              <a href="https://scholar.google.com/scholar?q=Taehun+Lee+DGIST" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-primary transition-colors">
                 <GraduationCap size={12} className="text-primary" />
                 <span className="font-academic text-xs">Google Scholar</span>
               </a>
