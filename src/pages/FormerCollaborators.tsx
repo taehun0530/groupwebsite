@@ -25,10 +25,10 @@ export default function FormerCollaborators() {
       </Link>
 
       <header className="mb-12">
-        <h1 className="font-sans text-3xl font-extrabold text-primary tracking-tighter mb-4">
+        <h1 className="font-sans text-xl md:text-3xl font-extrabold text-primary tracking-tighter mb-4">
           Former Collaborators
         </h1>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed">
+        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90">
           Acknowledging the past collaborations that have contributed significantly to our research foundation and academic growth.
         </p>
       </header>
@@ -37,7 +37,7 @@ export default function FormerCollaborators() {
         {/* Theory List */}
         <section>
           <div className="flex items-center gap-4 mb-8">
-            <h2 className="font-sans text-xs font-bold text-primary uppercase tracking-[0.2em] whitespace-nowrap">Theory</h2>
+            <h2 className="font-sans text-[10px] font-bold text-primary uppercase tracking-[0.2em] whitespace-nowrap">Theory</h2>
             <div className="h-px w-full bg-slate-200"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -59,7 +59,7 @@ export default function FormerCollaborators() {
         {/* Experiment List */}
         <section>
           <div className="flex items-center gap-4 mb-8">
-            <h2 className="font-sans text-xs font-bold text-primary uppercase tracking-[0.2em] whitespace-nowrap">Experiment</h2>
+            <h2 className="font-sans text-[10px] font-bold text-primary uppercase tracking-[0.2em] whitespace-nowrap">Experiment</h2>
             <div className="h-px w-full bg-slate-200"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -20,10 +20,10 @@ export default function People() {
     <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
       {/* Header Section */}
       <header className="mb-10 pb-8 border-b border-slate-200">
-        <h1 className="font-sans text-2xl md:text-4xl font-extrabold text-primary tracking-tighter mb-3">
+        <h1 className="font-sans text-xl md:text-3xl font-extrabold text-primary tracking-tighter mb-3">
           People
         </h1>
-        <p className="font-academic text-slate-700 leading-relaxed text-sm font-light opacity-90">
+        <p className="font-academic text-slate-700 leading-relaxed text-[13px] font-light opacity-90">
           Our group consists of motivated researchers dedicated to understanding and designing functional materials at the atomic scale.
         </p>
       </header>
@@ -139,17 +139,14 @@ export default function People() {
                 <User size={80} strokeWidth={1.5} className="group-hover:text-slate-400 transition-colors duration-300" />
               </div>
               <div className="p-4 flex flex-col flex-grow">
-                <h3 className="font-sans text-sm font-extrabold text-primary mb-1">
+                <h3 className="font-sans text-sm font-extrabold text-primary mb-2">
                   {student.name} <span className="text-[12px] text-slate-600 font-medium ml-1">{student.ko}</span>
                 </h3>
-                <p className="font-sans text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">
-                  {student.affiliation}
-                </p>
-                <div className="mb-3 flex flex-wrap items-baseline gap-1.5">
+                <div className="mb-3 flex flex-col gap-0.5">
                   <span className="font-sans text-[11px] font-bold text-tertiary">{student.role}</span>
-                  {(student as any).period && <span className="font-sans text-[10px] font-medium text-slate-400">{ (student as any).period }</span>}
+                  {(student as any).period && <span className="font-sans text-[9px] font-medium text-slate-400">{ (student as any).period }</span>}
                 </div>
-                <div className="flex flex-wrap gap-1 mb-3">
+                <div className="flex flex-wrap gap-1 mb-4">
                   {student.tags.map(tag => (
                     <span key={tag} className={`px-1.5 py-0.5 border rounded-full text-[7.5px] font-bold uppercase tracking-widest ${getTagColor(tag)}`}>
                       {tag}
@@ -253,13 +250,13 @@ export default function People() {
               to={link.path}
               className="group p-5 bg-slate-50 border border-transparent hover:border-slate-200 hover:bg-white transition-all flex flex-col rounded-sm"
             >
-              <h3 className="font-sans text-sm font-extrabold text-tertiary uppercase tracking-widest mb-2.5 transition-colors">
+              <h3 className="font-sans text-ghost text-[10px] font-bold text-tertiary uppercase tracking-widest mb-2.5 transition-colors">
                 {link.title}
               </h3>
-              <p className="font-academic text-[13px] text-slate-700 leading-relaxed mb-3">
+              <p className="font-academic text-xs text-slate-700 leading-relaxed mb-3">
                 {link.desc}
               </p>
-              <span className="mt-auto font-sans text-[11px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">
+              <span className="mt-auto font-sans text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">
                 View List →
               </span>
             </Link>

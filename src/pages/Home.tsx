@@ -109,20 +109,20 @@ export default function Home() {
               <h2 className="font-sans text-lg font-extrabold text-primary tracking-tight">Research Themes</h2>
             </div>
             <div className="w-full space-y-3">
-              <div className="text-sm text-slate-700 font-academic leading-relaxed text-left">
+              <div className="text-sm text-slate-700 font-academic font-light leading-relaxed text-left">
                 <p className="mb-2">Our research spans three interconnected themes:</p>
                 <ul className="space-y-1.5 pl-2">
                   <li className="flex items-start gap-2">
-                    <span className="text-slate-500">(1)</span>
-                    <span className="flex-1">identifying active motifs in realistic complex structures,</span>
+                    <span className="text-slate-500 font-medium">(1)</span>
+                    <span className="flex-1 opacity-90">identifying active motifs in realistic complex structures,</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-slate-500">(2)</span>
-                    <span className="flex-1">understanding the stability and reactivity of surfaces and interfaces under operating conditions, and</span>
+                    <span className="text-slate-500 font-medium">(2)</span>
+                    <span className="flex-1 opacity-90">understanding the stability and reactivity of surfaces and interfaces under operating conditions, and</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-slate-500">(3)</span>
-                    <span className="flex-1">establishing data-driven design rules for property prediction and inverse design.</span>
+                    <span className="text-slate-500 font-medium">(3)</span>
+                    <span className="flex-1 opacity-90">establishing data-driven design rules for property prediction and inverse design.</span>
                   </li>
                 </ul>
               </div>

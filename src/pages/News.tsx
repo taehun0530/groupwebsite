@@ -56,12 +56,12 @@ export const newsData: NewsItem[] = [
 
 export default function News() {
   return (
-    <div className="pt-24 pb-20 max-w-4xl mx-auto px-8">
+    <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
       <header className="mb-10 pb-6 border-b border-slate-200">
-        <h1 className="font-sans text-2xl md:text-4xl font-extrabold text-primary tracking-tighter mb-2">
+        <h1 className="font-sans text-xl md:text-3xl font-extrabold text-primary tracking-tighter mb-2">
           News
         </h1>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-sm font-light opacity-90">
+        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90">
           Recent updates from our lab, including publications, awards, and team activities.
         </p>
       </header>
@@ -89,12 +89,12 @@ export default function News() {
 
             {/* Right side: Content */}
             <div className="flex-grow">
-              <h3 className="font-sans text-base font-bold text-primary mb-2 leading-tight group-hover:text-tertiary transition-colors">
+              <h3 className="font-sans text-sm font-bold text-primary mb-2 leading-tight group-hover:text-tertiary transition-colors">
                 {item.title}
               </h3>
               
                   {item.summary && (
-                    <p className="font-academic text-sm text-slate-700 leading-relaxed mb-3">
+                    <p className="font-academic text-[13px] text-slate-700 leading-relaxed mb-3">
                       {item.summary}
                     </p>
                   )}

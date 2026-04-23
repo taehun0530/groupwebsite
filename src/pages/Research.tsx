@@ -123,7 +123,7 @@ const Research = () => {
     <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
       {/* Header Section */}
       <header className="mb-6">
-        <h1 className="font-sans font-extrabold text-2xl md:text-4xl tracking-tighter text-primary">Research</h1> 
+        <h1 className="font-sans font-extrabold text-xl md:text-3xl tracking-tighter text-primary">Research</h1> 
       </header>
 
         {/* Intro Text */}

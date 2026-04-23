@@ -33,10 +33,10 @@ export default function Collaborators() {
       </Link>
 
       <header className="mb-10">
-        <h1 className="font-sans text-2xl md:text-3xl font-extrabold text-primary tracking-tighter mb-3">
+        <h1 className="font-sans text-xl md:text-3xl font-extrabold text-primary tracking-tighter mb-3">
           Current Collaborators
         </h1>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-sm">
+        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90">
           Active partnerships with leading researchers and institutions worldwide, driving multidisciplinary breakthroughs in materials science.
         </p>
       </header>
@@ -61,7 +61,7 @@ export default function Collaborators() {
                   className="p-4 bg-white border border-slate-100 hover:border-slate-200 hover:shadow-sm transition-all rounded-sm"
                 >
                   <h3 className="font-sans font-bold text-primary text-sm mb-1">{collab.name}</h3>
-                  <p className="font-academic text-xs text-slate-700 italic leading-relaxed">{collab.role}</p>
+                  <p className="font-academic text-[11px] text-slate-700 italic leading-relaxed">{collab.role}</p>
                 </motion.div>
               ))}
             </div>

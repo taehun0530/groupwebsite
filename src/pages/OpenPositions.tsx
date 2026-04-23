@@ -3,13 +3,13 @@ import { motion } from 'motion/react';
 
 export default function OpenPositions() {
   return (
-    <div className="pt-24 pb-20 max-w-5xl mx-auto px-8">
+    <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
       {/* Header Section */}
       <header className="mb-10 pb-8 border-b border-slate-200">
-        <h1 className="font-sans text-2xl md:text-4xl font-extrabold text-primary tracking-tighter mb-3">
+        <h1 className="font-sans text-xl md:text-3xl font-extrabold text-primary tracking-tighter mb-3">
           Open Positions
         </h1>
-        <p className="font-academic text-slate-700 leading-relaxed text-sm font-light opacity-90">
+        <p className="font-academic text-slate-700 leading-relaxed text-[13px] font-light opacity-90">
           We are seeking motivated researchers to join our computational materials design group.
         </p>
       </header>
@@ -24,7 +24,7 @@ export default function OpenPositions() {
         {[
           {
             title: <>Graduate Students<br /><span className="text-sm font-medium opacity-80">(M.S. / Ph.D.)</span></>,
-            reqs: 'Required: Degree in Materials Science, Physics, Chemistry, or Chemical Engineering.',
+            reqs: 'Required: Degree in Materials Science, Physics, Chemistry, Computer Science, or Chemical Engineering.',
             pref: 'Preferred: Basic programming skills (Python) and interest in quantum mechanics or atomistic modeling.'
           },
           {
@@ -34,13 +34,13 @@ export default function OpenPositions() {
           }
         ].map((pos, i) => (
           <div key={i} className="group">
-            <div className="grid md:grid-cols-12 gap-3 md:gap-8 items-start">
-              <div className="md:col-span-4">
-                <h3 className="font-sans font-extrabold text-base md:text-lg text-primary group-hover:text-tertiary transition-colors leading-tight">{pos.title}</h3>
+            <div className="grid md:grid-cols-12 gap-1.5 md:gap-4 items-start">
+              <div className="md:col-span-3">
+                <h3 className="font-sans font-extrabold text-[13px] md:text-sm text-primary group-hover:text-tertiary transition-colors leading-tight">{pos.title}</h3>
               </div>
-              <div className="md:col-span-8 space-y-1.5">
-                <p className="text-sm text-slate-700 font-academic leading-relaxed">{pos.reqs}</p>
-                {pos.pref && <p className="text-xs text-slate-600 font-academic italic leading-relaxed">{pos.pref}</p>}
+              <div className="md:col-span-9 space-y-1">
+                <p className="text-[13px] text-slate-700 font-academic leading-relaxed">{pos.reqs}</p>
+                {pos.pref && <p className="text-[11px] text-slate-600 font-academic italic leading-relaxed">{pos.pref}</p>}
               </div>
             </div>
             {i < 1 && <div className="mt-6 h-px w-full bg-slate-50" />}
@@ -66,8 +66,8 @@ export default function OpenPositions() {
               whileHover={{ x: 4 }}
               className="bg-white border border-slate-100 p-5 hover:shadow-lg transition-all rounded-sm"
             >
-              <h3 className="font-sans font-extrabold text-[15px] text-primary mb-1.5">{project.title}</h3>
-              <p className="text-slate-700 font-academic text-xs leading-relaxed">{project.desc}</p>
+              <h3 className="font-sans font-extrabold text-sm text-primary mb-1.5">{project.title}</h3>
+              <p className="text-slate-700 font-academic text-[11px] leading-relaxed">{project.desc}</p>
             </motion.div>
           ))}
         </div>

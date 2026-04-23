@@ -31,10 +31,10 @@ export default function Alumni() {
       </Link>
 
       <header className="mb-8">
-        <h1 className="font-sans text-2xl md:text-3xl font-extrabold text-primary tracking-tighter mb-3">
+        <h1 className="font-sans text-xl md:text-3xl font-extrabold text-primary tracking-tighter mb-3">
           Alumni
         </h1>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-sm">
+        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90">
           Celebrating the achievements and career paths of our former group members.
         </p>
       </header>
@@ -46,15 +46,17 @@ export default function Alumni() {
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
-            className="p-3 bg-white border border-slate-100 flex flex-col md:flex-row md:items-center md:justify-between group hover:border-slate-200 transition-all gap-2 rounded-sm"
+            className="p-3 bg-white border border-slate-100 grid grid-cols-1 md:grid-cols-12 group hover:border-slate-200 transition-all gap-2 rounded-sm items-center"
           >
-            <div>
+            <div className="md:col-span-7">
               <h3 className="font-sans font-bold text-primary text-sm leading-tight">{alumni.name}</h3>
-              <p className="font-academic text-xs text-slate-600 font-medium">{alumni.role}</p>
+              <p className="font-academic text-[11px] text-slate-600 font-medium">{alumni.role}</p>
             </div>
-            {alumni.next && (
-              <p className="font-academic text-[11px] text-tertiary font-bold italic md:text-right">{alumni.next}</p>
-            )}
+            <div className="md:col-span-5">
+              {alumni.next && (
+                <p className="font-academic text-[11px] text-tertiary italic font-medium">{alumni.next}</p>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>

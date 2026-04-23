@@ -344,7 +344,7 @@ export default function Publications() {
   return (
     <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
       <header className="mb-8">
-        <h1 className="font-sans font-extrabold text-2xl md:text-4xl tracking-tighter text-primary">Publications</h1>
+        <h1 className="font-sans font-extrabold text-xl md:text-3xl tracking-tighter text-primary">Publications</h1>
         <div className="flex flex-col gap-2 mt-4">
           <a 
             href="https://scholar.google.com/scholar?q=Taehun+Lee+DGIST" 
@@ -412,10 +412,10 @@ export default function Publications() {
                       whileHover={{ x: 5 }}
                       className="group py-3 border-b border-slate-50 hover:bg-slate-50/50 px-5 -mx-5 transition-all"
                     >
-                      <h3 className="text-primary font-sans font-extrabold text-[15px] mb-1 leading-snug group-hover:text-tertiary transition-colors">
+                      <h3 className="text-primary font-sans font-extrabold text-sm mb-1 leading-snug group-hover:text-tertiary transition-colors">
                         {formatTitle(pub.title)}
                       </h3>
-                      <p className="text-slate-600 font-academic text-sm mb-1 leading-relaxed">
+                      <p className="text-slate-600 font-academic text-[13px] mb-1 leading-relaxed">
                         {pub.authors.split('T. Lee').map((part, index, array) => (
                           <span key={index}>
                             {part}
@@ -424,7 +424,7 @@ export default function Publications() {
                         ))}
                       </p>
                       <div className="flex flex-wrap items-center gap-5">
-                        <p className="text-slate-700 font-academic text-sm italic">
+                        <p className="text-slate-700 font-academic text-[13px] italic">
                           {(() => {
                             const match = pub.journal.match(/^(.*?)(?:\s+)(\d+.*|;\s*accepted.*)$/);
                             if (match) {
