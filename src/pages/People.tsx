@@ -15,24 +15,34 @@ const getTagColor = (tag: string) => {
   return 'bg-blue-50/50 text-blue-600/80 border-blue-100/30';
 };
 
+import PageBanner from '../components/PageBanner';
+
 export default function People() {
   return (
-    <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
+    <>
+    <PageBanner hideLine />
+    <div className="py-24 max-w-7xl mx-auto px-8">
       {/* Header Section */}
       <header className="mb-10 pb-8 border-b border-slate-200">
-        <h1 className="font-sans text-xl md:text-3xl font-extrabold text-primary tracking-tighter mb-3">
-          People
-        </h1>
+        <div className="flex items-center gap-3 mb-6">
+          <span className="h-px w-12 bg-primary" />
+          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">
+            People
+          </h1>
+        </div>
         <p className="font-academic text-slate-700 leading-relaxed text-[13px] font-light opacity-90">
           Our group consists of motivated researchers dedicated to understanding and designing functional materials at the atomic scale.
         </p>
       </header>
 
       {/* PI Section */}
-      <section className="mb-14">
-        <h2 className="font-sans text-lg font-extrabold text-primary tracking-tight mb-6">Principal Investigator</h2>
+      <section className="mb-24">
+        <div className="flex items-center gap-3 mb-8">
+          <span className="h-px w-10 bg-primary" />
+          <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Principal Investigator</h2>
+        </div>
         <div className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="w-full md:w-3/12 lg:w-[22%] sticky top-24">
+          <div className="w-full md:w-[28.5%] lg:w-[25.5%] sticky top-24">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -93,11 +103,14 @@ export default function People() {
         </div>
       </section>
 
-      <div className="mb-10 h-[1px] bg-slate-200" />
+      <div className="mb-24 h-[1px] bg-slate-200" />
 
       {/* Researchers */}
-      <section className="mb-14">
-        <h2 className="font-sans text-lg font-extrabold text-primary tracking-tight mb-5">Researchers</h2>
+      <section className="mb-24">
+        <div className="flex items-center gap-3 mb-8">
+          <span className="h-px w-10 bg-primary" />
+          <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Researchers</h2>
+        </div>
         <div className="py-6 px-6 bg-surface-container-low rounded-sm text-center border-2 border-dashed border-slate-200">
           <p className="font-academic text-slate-500 italic text-sm">
             Positions are available now. 
@@ -107,8 +120,11 @@ export default function People() {
       </section>
 
       {/* Graduate Students */}
-      <section className="mb-14">
-        <h2 className="font-sans text-lg font-extrabold text-primary tracking-tight mb-5">Graduate Students</h2>
+      <section className="mb-24">
+        <div className="flex items-center gap-3 mb-8">
+          <span className="h-px w-10 bg-primary" />
+          <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Graduate Students</h2>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             { 
@@ -163,8 +179,11 @@ export default function People() {
       </section>
 
       {/* Undergraduate Interns */}
-      <section className="mb-10">
-        <h2 className="font-sans text-lg font-extrabold text-primary tracking-tight mb-5">Undergraduate Interns</h2>
+      <section className="mb-24">
+        <div className="flex items-center gap-3 mb-8">
+          <span className="h-px w-10 bg-primary" />
+          <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Undergraduate Interns</h2>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             { 
@@ -263,6 +282,7 @@ export default function People() {
           ))}
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

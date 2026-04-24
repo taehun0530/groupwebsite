@@ -2,6 +2,8 @@ import { motion } from 'motion/react';
 import { ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import PageBanner from '../components/PageBanner';
+
 export default function Alumni() {
   const alumniList = [
     { 
@@ -22,7 +24,9 @@ export default function Alumni() {
   ];
 
   return (
-    <div className="pt-20 pb-12 max-w-4xl mx-auto px-8">
+    <>
+    <PageBanner hideLine />
+    <div className="py-24 max-w-4xl mx-auto px-8">
       <Link 
         to="/people" 
         className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-6"
@@ -30,11 +34,12 @@ export default function Alumni() {
         <ChevronLeft size={14} /> Back to People
       </Link>
 
-      <header className="mb-8">
-        <h1 className="font-sans text-xl md:text-3xl font-extrabold text-primary tracking-tighter mb-3">
-          Alumni
-        </h1>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90">
+      <header className="mb-24">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="h-px w-12 bg-primary" />
+          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Alumni</h1>
+        </div>
+        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90 pl-[60px]">
           Celebrating the achievements and career paths of our former group members.
         </p>
       </header>
@@ -61,5 +66,6 @@ export default function Alumni() {
         ))}
       </div>
     </div>
+    </>
   );
 }

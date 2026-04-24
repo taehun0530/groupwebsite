@@ -41,9 +41,32 @@ const systems = [
   }
 ];
 
+import PageBanner from '../components/PageBanner';
+
+const FormattedText = ({ text }: { text: string }) => {
+  if (!text) return null;
+  // Regex to identify parts that should be subscripts:
+  // 1. Digits following a letter (e.g., the '2' in SiO2)
+  // 2. Specific alloy variables like '1-x' following 'Hf' or 'x' following 'Zr'
+  const parts = text.split(/((?<=[A-Za-z])\d+|(?<=Hf)1−x|(?<=Zr)x)/g);
+  
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (i % 2 === 1) {
+          return <sub key={i} className="text-[70%] leading-none bottom-[-0.2em] relative inline-block ml-[0.05em] mr-[0.05em]">{part}</sub>;
+        }
+        return part;
+      })}
+    </>
+  );
+};
+
 export default function MaterialsSystems() {
   return (
-    <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
+    <>
+    <PageBanner hideLine />
+    <div className="py-24 max-w-7xl mx-auto px-8">
       <Link 
         to="/" 
         className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-8"
@@ -51,16 +74,19 @@ export default function MaterialsSystems() {
         <ChevronLeft size={14} /> Back to Home
       </Link>
 
-      <header className="mb-10">
-        <h1 className="font-sans text-2xl md:text-4xl font-extrabold text-primary tracking-tighter">
-          Materials Systems of Interest
-        </h1>
-        <div className="mt-4 font-academic text-sm font-light text-slate-700 max-w-3xl leading-relaxed pl-4 border-l-2 border-slate-200">
+      <header className="mb-24">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="h-px w-12 bg-primary" />
+          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">
+            Materials Systems of Interest
+          </h1>
+        </div>
+        <div className="mt-4 font-academic text-sm font-light text-slate-700 max-w-3xl leading-relaxed pl-[60px]">
           Exploring the frontiers of functional materials through advanced atomistic modeling and data-driven insights.
         </div>
       </header>
 
-      <div className="space-y-16">
+      <div className="space-y-24">
         {systems.map((system, i) => (
           <motion.section 
             key={system.id}
@@ -73,13 +99,13 @@ export default function MaterialsSystems() {
           >
             <div className={i % 2 === 1 ? 'md:order-2' : ''}>
               <div className="mb-2">
-                <span className="text-[10px] font-bold text-tertiary uppercase tracking-widest">SUB-SYSTEM {String(i + 1).padStart(2, '0')}</span>
+                <span className="text-[10px] font-bold text-primary uppercase tracking-widest">SUB-SYSTEM {String(i + 1).padStart(2, '0')}</span>
                 <h2 className="font-sans text-xl md:text-2xl font-extrabold text-primary tracking-tighter mt-1 mb-4 leading-tight">
-                  {system.title}
+                  <FormattedText text={system.title} />
                 </h2>
               </div>
               <p className="font-academic text-sm font-light text-slate-700 leading-relaxed">
-                {system.content}
+                <FormattedText text={system.content} />
               </p>
             </div>
             <div className={i % 2 === 1 ? 'md:order-1' : ''}>
@@ -96,5 +122,6 @@ export default function MaterialsSystems() {
         ))}
       </div>
     </div>
+    </>
   );
 }

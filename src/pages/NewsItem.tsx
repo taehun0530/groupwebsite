@@ -3,6 +3,8 @@ import { motion } from 'motion/react';
 import { ChevronLeft, Calendar, Tag, ExternalLink } from 'lucide-react';
 import { newsData } from './News';
 
+import PageBanner from '../components/PageBanner';
+
 export default function NewsItem() {
   const { id } = useParams();
   const item = newsData.find((n) => n.id === id);
@@ -73,7 +75,9 @@ export default function NewsItem() {
   };
 
   return (
-    <div className="pt-20 pb-12 max-w-3xl mx-auto px-8">
+    <>
+    <PageBanner />
+    <div className="pt-12 pb-12 max-w-3xl mx-auto px-8">
       <Link 
         to="/news" 
         className="inline-flex items-center gap-2 text-slate-500 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-6"
@@ -116,5 +120,6 @@ export default function NewsItem() {
         </div>
       </motion.article>
     </div>
+    </>
   );
 }

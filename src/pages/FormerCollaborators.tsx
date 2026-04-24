@@ -2,6 +2,8 @@ import { motion } from 'motion/react';
 import { ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import PageBanner from '../components/PageBanner';
+
 export default function FormerCollaborators() {
   const theoryList = [
     { name: 'Prof. Annabella Selloni', role: 'Princeton University (Chemistry), US' },
@@ -16,7 +18,9 @@ export default function FormerCollaborators() {
   ];
 
   return (
-    <div className="pt-24 pb-20 max-w-4xl mx-auto px-8">
+    <>
+    <PageBanner hideLine />
+    <div className="py-24 max-w-4xl mx-auto px-8">
       <Link 
         to="/people" 
         className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-8"
@@ -24,16 +28,17 @@ export default function FormerCollaborators() {
         <ChevronLeft size={14} /> Back to People
       </Link>
 
-      <header className="mb-12">
-        <h1 className="font-sans text-xl md:text-3xl font-extrabold text-primary tracking-tighter mb-4">
-          Former Collaborators
-        </h1>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90">
+      <header className="mb-24">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="h-px w-12 bg-primary" />
+          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Former Collaborators</h1>
+        </div>
+        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90 pl-[60px]">
           Acknowledging the past collaborations that have contributed significantly to our research foundation and academic growth.
         </p>
       </header>
 
-      <div className="space-y-16">
+      <div className="space-y-24">
         {/* Theory List */}
         <section>
           <div className="flex items-center gap-4 mb-8">
@@ -79,5 +84,6 @@ export default function FormerCollaborators() {
         </section>
       </div>
     </div>
+    </>
   );
 }

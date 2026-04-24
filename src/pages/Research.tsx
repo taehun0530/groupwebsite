@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Shield, Microscope, Database, BookOpen, ArrowUpRight, Zap, Waves, Activity, Battery, Layers, Search, Hexagon, RefreshCcw, FileText, HelpCircle, Cpu } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { publications as globalPublications } from './Publications';
+import ImageModal from '../components/ImageModal';
 
 const themes = [
   {
@@ -105,31 +106,96 @@ const getTagColor = (tag: string) => {
   return 'bg-blue-50/50 text-blue-600/80 border-blue-100/30';
 };
 
+import PageBanner from '../components/PageBanner';
+
 const Research = () => {
   const location = useLocation();
   const [activeTheme, setActiveTheme] = useState(themes[0].id);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState({ src: '', alt: '' });
+
+  const openModal = (src: string, alt: string) => {
+    setSelectedImage({ src, alt });
+    setModalOpen(true);
+  };
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const themeId = params.get('theme');
     if (themeId && themes.some(t => t.id === themeId)) {
       setActiveTheme(themeId);
+      // Small timeout to ensure the DOM is ready if it's the first mount
+      setTimeout(() => {
+        const element = document.getElementById('research-content');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
     }
   }, [location.search]);
 
   const currentTheme = themes.find(t => t.id === activeTheme)!;
 
   return (
-    <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
+    <>
+    <PageBanner hideLine />
+    <div id="research-content" className="py-24 max-w-7xl mx-auto px-8 relative overflow-hidden">
+      {/* Background Decorative Elements - Zig Zag Arrangement */}
+      {/* 1. Top Right - Neural Network */}
+      <div className="absolute -right-24 -top-12 opacity-[0.10] pointer-events-none select-none w-[500px] h-[500px] z-0">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform rotate-12">
+          <g opacity="0.8">
+            <circle cx="140" cy="60" r="3" fill="currentColor" />
+            <circle cx="140" cy="100" r="3" fill="currentColor" />
+            <circle cx="140" cy="140" r="3" fill="currentColor" />
+            <circle cx="80" cy="40" r="3" fill="currentColor" />
+            <circle cx="80" cy="80" r="3" fill="currentColor" />
+            <circle cx="80" cy="120" r="3" fill="currentColor" />
+            <circle cx="80" cy="160" r="3" fill="currentColor" />
+            {[60, 100, 140].map(y1 => [40, 80, 120, 160].map(y2 => (
+              <line key={`n-${y1}-${y2}`} x1="140" y1={y1} x2="80" y2={y2} stroke="currentColor" strokeWidth="0.8" opacity="0.4" />
+            )))}
+          </g>
+        </svg>
+      </div>
+
+      {/* 2. Middle Left - Quantum Mechanics (Standard Atomic Orbital) */}
+      <div className="absolute -left-32 top-[45%] opacity-[0.10] pointer-events-none select-none w-[600px] h-[600px] z-0">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform -rotate-12">
+          {/* Nucleus */}
+          <circle cx="100" cy="100" r="4" fill="currentColor" className="animate-pulse" />
+          {/* Standard Orbitals */}
+          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(0 100 100)" />
+          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(60 100 100)" />
+          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(120 100 100)" />
+        </svg>
+      </div>
+
+      {/* 3. Bottom Right - Atomic/Materials */}
+      <div className="absolute -right-32 -bottom-24 opacity-[0.10] pointer-events-none select-none w-[550px] h-[550px] z-0">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform rotate-45">
+          <rect x="80" y="80" width="40" height="40" stroke="currentColor" strokeWidth="0.5" fill="none" />
+          <circle cx="80" cy="80" r="3" fill="currentColor" />
+          <circle cx="120" cy="80" r="3" fill="currentColor" />
+          <circle cx="80" cy="120" r="3" fill="currentColor" />
+          <circle cx="120" cy="120" r="3" fill="currentColor" />
+        </svg>
+      </div>
+
       {/* Header Section */}
-      <header className="mb-6">
-        <h1 className="font-sans font-extrabold text-xl md:text-3xl tracking-tighter text-primary">Research</h1> 
+      <header className="relative z-10 mb-8">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="h-px w-12 bg-primary" />
+          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Research</h1>
+        </div>
       </header>
 
         {/* Intro Text */}
-        <section className="mb-10">
+        <section className="relative z-10 mb-24">
           {/* Text Content */}
-          <div className="w-full space-y-4">
+          <div className="w-full space-y-4 pl-[60px]">
             <div className="font-academic text-sm font-light text-slate-700 leading-relaxed">
               <p className="mb-2">Our research spans three interconnected themes:</p>
               <ul className="space-y-1.5 pl-2">
@@ -168,7 +234,7 @@ const Research = () => {
           <div className="mt-8 h-[1px] bg-slate-200" />
         </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-10 gap-10">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-10 gap-10">
         {/* Sidebar Navigation */}
         <aside className="md:col-span-2 h-fit sticky top-32">
           <nav className="flex flex-col gap-4">
@@ -200,9 +266,9 @@ const Research = () => {
               className="flex flex-col gap-8"
             >
               {/* 1. Title Section */}
-              <div className="flex items-center gap-3 mb-1">
-                <div className="section-divider" />
-                <h2 className="font-sans text-2xl font-extrabold text-primary tracking-tight leading-tight">{currentTheme.title}</h2>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="h-px w-10 bg-primary" />
+                <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">{currentTheme.title}</h2>
               </div>
 
               {/* 2 & 3. Research Questions & Methodologies */}
@@ -252,13 +318,21 @@ const Research = () => {
                           </p>
                           {i === 0 && (
                             <div className="w-full flex justify-center py-2">
-                              <div className="w-full max-w-lg bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden shadow-sm rounded-sm">
+                              <div 
+                                className="w-full max-w-[563px] bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden shadow-sm rounded-sm cursor-pointer group relative"
+                                onClick={() => openModal(currentTheme.image, currentTheme.title)}
+                              >
                                 <img 
                                   src={currentTheme.image} 
                                   alt={currentTheme.title} 
-                                  className="w-full h-auto"
+                                  className="w-full h-auto group-hover:opacity-90 transition-opacity"
                                   referrerPolicy="no-referrer"
                                 />
+                                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                  <div className="bg-primary/60 text-white px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm">
+                                    Click to Enlarge
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           )}
@@ -331,6 +405,13 @@ const Research = () => {
         </div>
       </div>
     </div>
+    <ImageModal 
+      isOpen={modalOpen} 
+      onClose={() => setModalOpen(false)} 
+      imageSrc={selectedImage.src} 
+      imageAlt={selectedImage.alt} 
+    />
+    </>
   );
 };
 

@@ -325,6 +325,8 @@ const formatTitle = (title: string) => {
   return parts.length > 0 ? parts : title;
 };
 
+import PageBanner from '../components/PageBanner';
+
 export default function Publications() {
   const [activeYear, setActiveYear] = useState('All');
 
@@ -342,10 +344,15 @@ export default function Publications() {
   }, {} as Record<string, typeof publications>);
 
   return (
-    <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
-      <header className="mb-8">
-        <h1 className="font-sans font-extrabold text-xl md:text-3xl tracking-tighter text-primary">Publications</h1>
-        <div className="flex flex-col gap-2 mt-4">
+    <>
+    <PageBanner hideLine />
+    <div className="py-24 max-w-7xl mx-auto px-8">
+      <header className="mb-24">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="h-px w-12 bg-primary" />
+          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Publications</h1>
+        </div>
+        <div className="flex flex-col gap-2 mt-4 ml-[60px]">
           <a 
             href="https://scholar.google.com/scholar?q=Taehun+Lee+DGIST" 
             target="_blank" 
@@ -358,7 +365,7 @@ export default function Publications() {
       </header>
 
       {/* Filter */}
-      <section className="sticky top-16 z-40 bg-white/80 backdrop-blur-md mb-4 border-b border-slate-200">
+      <section className="sticky top-16 z-40 bg-white/80 backdrop-blur-md mb-24 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-8 py-2.5">
           <div className="flex items-center gap-5 overflow-x-auto no-scrollbar">
             <div className="flex gap-1.5">
@@ -394,7 +401,7 @@ export default function Publications() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="space-y-8"
+            className="space-y-24"
           >
             {Object.keys(groupedPubs).sort((a, b) => b.localeCompare(a)).map(year => (
               <section key={year} className="relative">
@@ -456,5 +463,6 @@ export default function Publications() {
         </AnimatePresence>
       </div>
     </div>
+    </>
   );
 }

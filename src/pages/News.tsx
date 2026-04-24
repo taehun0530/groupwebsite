@@ -54,19 +54,24 @@ export const newsData: NewsItem[] = [
   },
 ];
 
+import PageBanner from '../components/PageBanner';
+
 export default function News() {
   return (
-    <div className="pt-24 pb-20 max-w-7xl mx-auto px-8">
-      <header className="mb-10 pb-6 border-b border-slate-200">
-        <h1 className="font-sans text-xl md:text-3xl font-extrabold text-primary tracking-tighter mb-2">
-          News
-        </h1>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90">
+    <>
+    <PageBanner hideLine />
+    <div className="py-24 max-w-7xl mx-auto px-8">
+      <header className="mb-24 pb-6 border-b border-slate-200">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="h-px w-12 bg-primary" />
+          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">News</h1>
+        </div>
+        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90 pl-[60px]">
           Recent updates from our lab, including publications, awards, and team activities.
         </p>
       </header>
 
-      <div className="space-y-8">
+      <div className="space-y-24">
         {newsData.map((item, i) => (
           <motion.article 
             key={item.id}
@@ -112,5 +117,6 @@ export default function News() {
         ))}
       </div>
     </div>
+    </>
   );
 }

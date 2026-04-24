@@ -1,12 +1,100 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Database, Brain, Globe, FlaskConical, BarChart3, Zap, Waves, Battery, Layers, Search, Activity, Atom, Server, Sun, Hexagon, ArrowDown, Cpu, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ImageModal from '../components/ImageModal';
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState({ src: '', alt: '' });
+
+  const openModal = (src: string, alt: string) => {
+    setSelectedImage({ src, alt });
+    setModalOpen(true);
+  };
   return (
-    <div className="pt-[64px]">
+    <div className="relative overflow-hidden bg-white">
+      {/* Background Decorative Elements - zig zag arrangement (Synced with Research Page) */}
+      {/* 1. Top Right - Neural Network */}
+      <div className="absolute -right-24 top-10 opacity-[0.10] pointer-events-none select-none w-[500px] h-[500px] z-[5]">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform rotate-12">
+          <g opacity="0.8">
+            <circle cx="140" cy="60" r="3" fill="currentColor" />
+            <circle cx="140" cy="100" r="3" fill="currentColor" />
+            <circle cx="140" cy="140" r="3" fill="currentColor" />
+            <circle cx="80" cy="40" r="3" fill="currentColor" />
+            <circle cx="80" cy="80" r="3" fill="currentColor" />
+            <circle cx="80" cy="120" r="3" fill="currentColor" />
+            <circle cx="80" cy="160" r="3" fill="currentColor" />
+            {[60, 100, 140].map(y1 => [40, 80, 120, 160].map(y2 => (
+              <line key={`n1-${y1}-${y2}`} x1="140" y1={y1} x2="80" y2={y2} stroke="currentColor" strokeWidth="0.8" opacity="0.4" />
+            )))}
+          </g>
+        </svg>
+      </div>
+
+      {/* 2. Middle Left - Quantum Mechanics */}
+      <div className="absolute -left-32 top-[18%] opacity-[0.10] pointer-events-none select-none w-[600px] h-[600px] z-[5]">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform -rotate-12">
+          <circle cx="100" cy="100" r="4" fill="currentColor" className="animate-pulse" />
+          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(0 100 100)" />
+          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(60 100 100)" />
+          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(120 100 100)" />
+        </svg>
+      </div>
+
+      {/* 3. Middle Right - Atomic/Materials */}
+      <div className="absolute -right-32 top-[35%] opacity-[0.10] pointer-events-none select-none w-[550px] h-[550px] z-[5]">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform rotate-45">
+          <rect x="80" y="80" width="40" height="40" stroke="currentColor" strokeWidth="0.5" fill="none" />
+          <circle cx="80" cy="80" r="3" fill="currentColor" />
+          <circle cx="120" cy="80" r="3" fill="currentColor" />
+          <circle cx="80" cy="120" r="3" fill="currentColor" />
+          <circle cx="120" cy="120" r="3" fill="currentColor" />
+        </svg>
+      </div>
+
+      {/* 4. Lower Left - Neural Network (Flipped) */}
+      <div className="absolute -left-24 top-[55%] opacity-[0.10] pointer-events-none select-none w-[500px] h-[500px] z-[5]">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform -rotate-12 scale-x-[-1]">
+          <g opacity="0.8">
+            <circle cx="140" cy="60" r="3" fill="currentColor" />
+            <circle cx="140" cy="100" r="3" fill="currentColor" />
+            <circle cx="140" cy="140" r="3" fill="currentColor" />
+            <circle cx="80" cy="40" r="3" fill="currentColor" />
+            <circle cx="80" cy="80" r="3" fill="currentColor" />
+            <circle cx="80" cy="120" r="3" fill="currentColor" />
+            <circle cx="80" cy="160" r="3" fill="currentColor" />
+            {[60, 100, 140].map(y1 => [40, 80, 120, 160].map(y2 => (
+              <line key={`n2-${y1}-${y2}`} x1="140" y1={y1} x2="80" y2={y2} stroke="currentColor" strokeWidth="0.8" opacity="0.4" />
+            )))}
+          </g>
+        </svg>
+      </div>
+
+      {/* 5. Lower Right - Quantum Mechanics */}
+      <div className="absolute -right-32 top-[75%] opacity-[0.10] pointer-events-none select-none w-[600px] h-[600px] z-[5]">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform rotate-12">
+          <circle cx="100" cy="100" r="4" fill="currentColor" className="animate-pulse" />
+          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(0 100 100)" />
+          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(60 100 100)" />
+          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(120 100 100)" />
+        </svg>
+      </div>
+
+      {/* 6. Bottom Left - Atomic/Materials */}
+      <div className="absolute -left-32 bottom-20 opacity-[0.10] pointer-events-none select-none w-[550px] h-[550px] z-[5]">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform -rotate-45">
+          <rect x="80" y="80" width="40" height="40" stroke="currentColor" strokeWidth="0.5" fill="none" />
+          <circle cx="80" cy="80" r="3" fill="currentColor" />
+          <circle cx="120" cy="80" r="3" fill="currentColor" />
+          <circle cx="80" cy="120" r="3" fill="currentColor" />
+          <circle cx="120" cy="120" r="3" fill="currentColor" />
+        </svg>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative min-h-[35vh] flex items-center overflow-hidden bg-primary">
+      <section className="relative z-10 min-h-[35vh] flex items-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0 opacity-40">
           <img 
             src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&q=80&w=2000" 
@@ -49,12 +137,87 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Group Intro Section */}
+      <section className="relative z-10 py-24 bg-transparent overflow-hidden">
+        <div className="max-w-7xl mx-auto px-8 relative">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            {/* Small Label */}
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-px w-12 bg-primary" />
+              <span className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Group Introduction</span>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-10">
+              {/* Left Section: English Text (ratio 4/10) */}
+              <div className="lg:col-span-5 space-y-6">
+                <div className="relative">
+                  <p className="text-sm md:text-base font-light text-slate-800 font-academic leading-relaxed text-left tracking-tight">
+                    Led by <span className="font-bold text-primary border-b-2 border-accent-blue/30 pb-0.5">Professor Taehun Lee</span> in the Department of Energy Science and Engineering at DGIST, our research combines <span className="font-medium text-slate-900 italic">computational materials science</span>, quantum-mechanical simulations, and machine learning to understand and design functional materials.
+                  </p>
+                </div>
+                <div className="pt-4 flex gap-4">
+                  <div className="h-full w-px bg-slate-100 shrink-0" />
+                  <p className="text-[13px] md:text-sm font-light text-slate-600 font-academic leading-relaxed text-left">
+                    We focus on how atomic-scale structures, defects, interfaces, and chemical environments govern materials properties under realistic operating conditions. By integrating density functional theory (DFT), molecular dynamics, machine-learned interatomic potentials, and automated workflows, we aim to establish design principles for advanced energy and electronic materials.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Section: Lab Introduction Image (ratio 6/10) */}
+              <div className="lg:col-span-7 flex items-center justify-center overflow-hidden relative">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="w-full max-w-2xl mx-auto cursor-pointer group"
+                  onClick={() => openModal("/images/lab-introduction.png", "Laboratory Overview Diagram")}
+                >
+                  <img 
+                    src="/images/lab-introduction.png" 
+                    alt="Laboratory Overview Diagram" 
+                    className="w-full h-auto rounded-sm shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-slate-100 group-hover:opacity-90 transition-opacity"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="bg-primary/60 text-white px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm">
+                      Click to Enlarge
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Bottom Section: Full Width Korean Text (Matching Research Overview format) */}
+            <div className="mt-8 space-y-4 pl-3 border-l-2 border-accent-blue/30 opacity-80">
+              <p className="text-[13px] text-slate-600 font-academic leading-relaxed italic text-left break-keep">
+                본 연구실(지도 교수: DGIST 에너지공학과 이태훈)은 계산재료과학, 양자역학 기반 시뮬레이션, 머신러닝을 결합하여 기능성 소재를 이해하고 설계합니다. 우리는 원자 수준의 구조, 결함, 계면이 소재 물성에 어떻게 영향을 주는지 연구합니다.
+              </p>
+              <p className="text-[13px] text-slate-600 font-academic leading-relaxed italic text-left break-keep">
+                DFT, 분자동역학, MLIP, 자동화 계산 워크플로우를 통합하여 차세대 에너지 및 전자 소재의 설계 원리를 확립하는 것을 목표로 합니다.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Section Divider */}
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <div className="h-px bg-slate-200" />
+      </div>
+
       {/* Research Overview */}
-      <section className="py-10 bg-surface">
+      <section className="relative z-10 py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-center gap-3 mb-6">
-            <div className="section-divider" />
-            <h2 className="font-sans text-lg font-extrabold text-primary tracking-tight">Research Overview</h2>
+            <span className="h-px w-12 bg-primary" />
+            <h2 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Research Overview</h2>
           </div>
           
           <div className="flex flex-col gap-8">
@@ -67,14 +230,20 @@ export default function Home() {
             <div className="w-full flex justify-center">
               <motion.div 
                 whileHover={{ scale: 1.002 }}
-                className="w-full max-w-2xl overflow-hidden bg-white shadow-sm border border-slate-100 rounded-sm"
+                className="w-full max-w-2xl overflow-hidden bg-white shadow-sm border border-slate-100 rounded-sm cursor-pointer group relative"
+                onClick={() => openModal("/images/overall.png", "Research Overall Graphic")}
               >
                 <img 
                   src="/images/overall.png" 
                   alt="Research Overall Graphic" 
-                  className="w-full h-auto"
+                  className="w-full h-auto group-hover:opacity-90 transition-opacity"
                   referrerPolicy="no-referrer"
                 />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="bg-primary/60 text-white px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm">
+                    Click to Enlarge
+                  </div>
+                </div>
               </motion.div>
             </div>
             
@@ -100,13 +269,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <div className="h-px bg-slate-200" />
+      </div>
+
       {/* Research Themes */}
-      <section className="py-10 bg-surface-container-low">
+      <section className="relative z-10 py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-8">
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="section-divider" />
-              <h2 className="font-sans text-lg font-extrabold text-primary tracking-tight">Research Themes</h2>
+            <div className="flex items-center gap-3 mb-8">
+              <span className="h-px w-12 bg-primary" />
+              <h2 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Research Themes</h2>
             </div>
             <div className="w-full space-y-3">
               <div className="text-sm text-slate-700 font-academic font-light leading-relaxed text-left">
@@ -148,7 +322,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             {[
               { id: 'complex-structure', title: 'Complex Structure Discovery', icon: <BarChart3 className="w-4 h-4" />, img: '/images/topic1.png' },
               { id: 'operando-reactivity', title: 'Electrochemical Interfacial Reactivity', icon: <Zap className="w-4 h-4" />, img: '/images/topic2.png' },
@@ -157,7 +331,7 @@ export default function Home() {
               <Link 
                 key={i}
                 to={`/research?theme=${theme.id}`}
-                className="block"
+                className="block max-w-[240px] md:max-w-none mx-auto w-full"
               >
                 <motion.div 
                   whileHover={{ y: -3 }}
@@ -183,13 +357,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <div className="h-px bg-slate-200" />
+      </div>
+
       {/* Materials Systems */}
-      <section className="py-10 bg-surface">
+      <section className="relative z-10 py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
-              <div className="section-divider" />
-              <h2 className="font-sans text-lg font-extrabold text-primary tracking-tight">Materials Systems of Interest</h2>
+              <span className="h-px w-12 bg-primary" />
+              <h2 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Materials Systems of Interest</h2>
             </div>
             <Link 
               to="/materials-systems" 
@@ -254,13 +433,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <div className="h-px bg-slate-200" />
+      </div>
+
       {/* Method Section */}
-      <section className="py-10 bg-surface-container-low">
+      <section className="relative z-10 py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-8">
           <div className="mb-6">
             <div className="flex items-center gap-3 mb-3">
-              <div className="section-divider" />
-              <h2 className="font-sans text-lg font-extrabold text-primary tracking-tight">Method</h2>
+              <span className="h-px w-12 bg-primary" />
+              <h2 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Method</h2>
             </div>
             <div className="w-full space-y-3">
               <p className="text-sm font-light text-slate-700 font-academic leading-relaxed text-left">
@@ -314,7 +498,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-10 bg-primary text-white">
+      <section className="relative z-10 py-24 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl text-center md:text-left space-y-1">
             <h2 className="font-sans text-xl font-extrabold tracking-tight text-white">Join our research team.</h2>
@@ -332,6 +516,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ImageModal 
+        isOpen={modalOpen} 
+        onClose={() => setModalOpen(false)} 
+        imageSrc={selectedImage.src} 
+        imageAlt={selectedImage.alt} 
+      />
     </div>
   );
 }

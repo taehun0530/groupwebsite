@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-3 pt-3 border-t border-slate-200">
+        <div className="mt-3 pt-3">
           <p className="font-sans text-[9px] text-slate-400 uppercase tracking-widest font-medium">
             © 2026 Lee Group. All rights reserved.
           </p>

@@ -2,6 +2,8 @@ import { motion } from 'motion/react';
 import { ArrowLeft, Mail, Globe, Award, Briefcase, GraduationCap, Users } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+import PageBanner from '../components/PageBanner';
+
 export default function Profile() {
   const navigate = useNavigate();
 
@@ -43,7 +45,9 @@ export default function Profile() {
   ];
 
   return (
-    <div className="pt-20 pb-12 max-w-4xl mx-auto px-8">
+    <>
+    <PageBanner hideLine />
+    <div className="py-24 max-w-4xl mx-auto px-8">
       <button 
         onClick={() => navigate(-1)}
         className="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors mb-6 group"
@@ -52,8 +56,12 @@ export default function Profile() {
         <span className="font-sans text-[10px] font-bold uppercase tracking-widest">Back to People</span>
       </button>
 
-      <header className="mb-8">
-        <div className="flex flex-col md:flex-row gap-6 items-start pb-4 relative">
+      <header className="mb-24">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="h-px w-12 bg-primary" />
+          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Principal Investigator</h1>
+        </div>
+        <div className="flex flex-col md:flex-row gap-6 items-start pb-4 relative pl-[60px]">
           <div className="flex-grow">
             <div className="flex flex-wrap items-baseline gap-3 mb-2">
               <h1 className="font-sans text-3xl font-extrabold text-primary tracking-tighter">Taehun Lee</h1>
@@ -75,7 +83,7 @@ export default function Profile() {
         </div>
       </header>
 
-      <div className="space-y-8">
+      <div className="space-y-24">
         {sections.map((section, idx) => (
           <motion.section 
             key={idx}
@@ -107,5 +115,6 @@ export default function Profile() {
         ))}
       </div>
     </div>
+    </>
   );
 }
