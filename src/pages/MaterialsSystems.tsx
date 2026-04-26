@@ -1,25 +1,27 @@
 import { motion } from 'motion/react';
 import { ChevronLeft, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import ImageModal from '../components/ImageModal';
 
 const systems = [
   {
     id: 'high-k',
     title: 'Defect-Rich High-k Dielectrics and Oxide Interfaces',
     content: 'SiO2, HfO2, ZrO2, and Hf1−xZrxO2 (HZO), with a focus on defects, trap states, ferroelectricity, and surface or interfaces. We combine DFT, beyond-DFT electronic-structure methods, machine-learned interatomic potentials (MLIPs), and data-driven analysis to understand how defect chemistry governs phase stability and electrical behavior in high-k oxide systems.',
-    img: 'https://picsum.photos/seed/dielectric/1200/800'
+    img: '/images/materials1.png'
   },
   {
     id: 'photoelectrochemical',
     title: 'Photoelectrochemical Ternary Oxides and Aqueous Interfaces',
     content: 'BiVO4 and related photoelectrochemical oxides, particularly reconstructed surfaces, solid–liquid interfaces, polarons, and charge localization under aqueous conditions. Using beyond-DFT methods, MLIP-based molecular dynamics, and global optimization, we investigate how interfacial structure, hydration, and electronic-state evolution control stability and photoelectrochemical functionality.',
-    img: 'https://picsum.photos/seed/aqueous/1200/800'
+    img: '/images/materials2.png'
   },
   {
     id: 'electrocatalytic',
     title: 'Electrocatalytic Oxides and Oxide Alloys',
     content: 'Transition-metal oxides and mixed oxides/alloys for OER and related electrochemical reactions, with emphasis on surface reconstruction, adsorbate evolution under applied bias. We use grand-canonical and beyond-DFT approaches, MLIP-enabled atomistic simulations, nanoparticle structure prediction, and data-driven modeling to reveal how surface and subsurface transformations govern catalytic activity and stability.',
-    img: 'https://picsum.photos/seed/catalyst/1200/800'
+    img: '/images/materials3.png'
   },
   {
     id: 'halide',
@@ -37,7 +39,7 @@ const systems = [
     id: 'interpretation',
     title: 'Computation-Guided Interpretation of Experiments',
     content: 'Atomistic interpretation of microscopy, spectroscopy, electrochemistry, and operando measurements to connect observed signals with structure, defects, and reaction pathways. By combining DFT, beyond-DFT methods, MLIP-based simulations, global optimization, and data-science-assisted analysis, we link experiments with realistic atomistic models and uncover the structural origins of measured behavior.',
-    img: 'https://picsum.photos/seed/microscopy/1200/800'
+    img: '/images/materials6.png'
   }
 ];
 
@@ -63,6 +65,14 @@ const FormattedText = ({ text }: { text: string }) => {
 };
 
 export default function MaterialsSystems() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState({ src: '', alt: '' });
+
+  const openModal = (src: string, alt: string) => {
+    setSelectedImage({ src, alt });
+    setModalOpen(true);
+  };
+
   return (
     <>
     <PageBanner hideLine />
@@ -94,11 +104,11 @@ export default function MaterialsSystems() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+            className={`grid grid-cols-1 gap-12 md:gap-24 items-center ${i % 2 === 0 ? 'md:grid-cols-[6.5fr_3.5fr]' : 'md:grid-cols-[3.5fr_6.5fr]'}`}
             id={system.id}
           >
             <div className={i % 2 === 1 ? 'md:order-2' : ''}>
-              <div className="mb-2">
+              <div className="mb-4">
                 <span className="text-[10px] font-bold text-primary uppercase tracking-widest">SUB-SYSTEM {String(i + 1).padStart(2, '0')}</span>
                 <h2 className="font-sans text-xl md:text-2xl font-extrabold text-primary tracking-tighter mt-1 mb-4 leading-tight">
                   <FormattedText text={system.title} />
@@ -108,20 +118,34 @@ export default function MaterialsSystems() {
                 <FormattedText text={system.content} />
               </p>
             </div>
-            <div className={i % 2 === 1 ? 'md:order-1' : ''}>
-              <div className="aspect-[16/10] overflow-hidden bg-slate-50 shadow-2xl rounded-sm border border-slate-100 group">
+            <div className={`flex ${i % 2 === 1 ? 'md:order-1 md:justify-start' : 'md:justify-end'}`}>
+              <div 
+                className="w-full max-w-[450px] overflow-hidden bg-slate-50 rounded-sm border border-slate-100 group relative cursor-pointer"
+                onClick={() => openModal(system.img, system.title)}
+              >
                 <img 
                   src={system.img} 
                   alt={system.title} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105"
+                  className="w-full h-auto block"
                   referrerPolicy="no-referrer"
                 />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5">
+                  <div className="bg-primary/60 text-white px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm">
+                    Click to Enlarge
+                  </div>
+                </div>
               </div>
             </div>
           </motion.section>
         ))}
       </div>
     </div>
+    <ImageModal 
+      isOpen={modalOpen} 
+      onClose={() => setModalOpen(false)} 
+      imageSrc={selectedImage.src} 
+      imageAlt={selectedImage.alt} 
+    />
     </>
   );
 }

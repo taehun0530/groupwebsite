@@ -8,15 +8,14 @@ interface PageBannerProps {
 
 const PageBanner: React.FC<PageBannerProps> = ({ hideLine = false }) => {
   return (
-    <div className="relative w-full h-16 md:h-20 overflow-hidden bg-primary">
-      <div className="absolute inset-0 z-0 opacity-30">
+    <div className="relative w-full h-24 md:h-[120px] overflow-hidden bg-primary">
+      <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?auto=format&fit=crop&q=80&w=2000" 
+          src="/images/main_banner.jpg" 
           alt="Decorative artwork" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[0%_65%]"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-transparent to-primary" />
       </div>
       
       {/* Decorative lines */}

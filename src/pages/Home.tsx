@@ -94,15 +94,15 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative z-10 min-h-[35vh] flex items-center overflow-hidden bg-primary">
-        <div className="absolute inset-0 z-0 opacity-40">
+      <section className="relative z-10 min-h-[35vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-100">
           <img 
-            src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&q=80&w=2000" 
+            src="/images/main_banner.jpg" 
             alt="Atomic structure visualization" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-left"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/60 to-transparent" />
+          <div className="absolute inset-y-0 left-0 w-[80%] md:w-[70%] bg-gradient-to-r from-primary/100 via-primary/85 to-transparent" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-8 w-full py-10">
@@ -112,8 +112,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl space-y-3"
           >
-            <h1 className="font-sans text-2xl md:text-3xl font-extrabold text-white leading-tight tracking-tighter">
-              Materials Modeling and Machine Learning for <br className="hidden md:block" /><span className="text-accent-blue">Structure–Property Relationships</span>
+            <h1 className="font-sans text-2xl md:text-3xl font-extrabold text-white leading-tight tracking-tighter drop-shadow-md">
+              Materials Modeling and Machine Learning for <br className="hidden md:block" /><span className="text-accent-blue drop-shadow-sm">Structure–Property Relationships</span>
             </h1>
             <div className="flex flex-wrap items-center gap-2 md:gap-3 pt-4">
               <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-white backdrop-blur-sm shadow-sm">
@@ -324,30 +324,42 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             {[
-              { id: 'complex-structure', title: 'Complex Structure Discovery', icon: <BarChart3 className="w-4 h-4" />, img: '/images/topic1.png' },
-              { id: 'operando-reactivity', title: 'Electrochemical Interfacial Reactivity', icon: <Zap className="w-4 h-4" />, img: '/images/topic2.png' },
-              { id: 'data-driven-inverse', title: 'Data-Driven Materials Design', icon: <Brain className="w-4 h-4" />, img: 'https://picsum.photos/seed/data/400/400' },
+              { id: 'complex-structure', title: 'Complex Structure Discovery', icon: <BarChart3 className="w-4 h-4" />, img: '/images/topic1_scheme.jpg' },
+              { id: 'operando-reactivity', title: 'Electrochemical Interfacial Reactivity', icon: <Zap className="w-4 h-4" />, img: '/images/topic2_scheme.png' },
+              { id: 'data-driven-inverse', title: 'Data-Driven Materials Design', icon: <Brain className="w-4 h-4" />, img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600' },
             ].map((theme, i) => (
               <Link 
                 key={i}
                 to={`/research?theme=${theme.id}`}
-                className="block max-w-[240px] md:max-w-none mx-auto w-full"
+                className="block max-w-[240px] md:max-w-none mx-auto w-full h-full"
               >
                 <motion.div 
                   whileHover={{ y: -3 }}
-                  className="group bg-white flex flex-col items-center text-center aspect-square border border-slate-100 hover:shadow-lg transition-all duration-500 overflow-hidden relative rounded-sm"
+                  className="group bg-white flex flex-col border border-slate-100 hover:shadow-lg transition-all duration-500 overflow-hidden relative rounded-sm h-full shadow-sm"
                 >
-                    <div className="absolute inset-0 z-0 opacity-40 transition-opacity">
-                      <img src={theme.img} alt={theme.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <div className="aspect-square w-full overflow-hidden bg-slate-50 relative">
+                    <img 
+                      src={theme.img} 
+                      alt={theme.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                      referrerPolicy="no-referrer" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    
+                    {/* Hover Overlay */}
+                    <div className="absolute top-0 left-0 w-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0 flex items-center justify-between z-10">
+                      <span className="font-sans text-[10px] font-bold tracking-widest text-primary uppercase drop-shadow-md">Explore Theme</span>
+                      <ArrowRight size={12} className="text-primary drop-shadow-md" />
                     </div>
-                  <div className="relative z-10 p-3 flex flex-col items-center justify-center h-full w-full bg-white/60 backdrop-blur-[2px] group-hover:bg-white/40 transition-colors">
-                    <div className="w-7 h-7 bg-primary/10 flex items-center justify-center mb-1.5 text-primary rounded-full">
-                      {theme.icon}
-                    </div>
-                    <h3 className="font-sans text-[11px] font-bold text-primary px-1 leading-tight">{theme.title}</h3>
-                    <div className="mt-1.5 font-sans text-[8px] font-bold tracking-widest text-tertiary uppercase flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <span>View</span>
-                      <ArrowRight size={8} />
+                  </div>
+                  <div className="p-3 flex flex-col justify-center flex-auto">
+                    <div className="flex items-center gap-2.5 w-full">
+                      <div className="w-7 h-7 shrink-0 bg-primary/5 flex items-center justify-center text-primary rounded-full group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        {theme.icon}
+                      </div>
+                      <h3 className="font-sans text-[11px] md:text-xs font-bold text-primary leading-tight text-left">
+                        {theme.title}
+                      </h3>
                     </div>
                   </div>
                 </motion.div>
