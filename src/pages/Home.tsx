@@ -326,7 +326,7 @@ export default function Home() {
             {[
               { id: 'complex-structure', title: 'Complex Structure Discovery', icon: <BarChart3 className="w-4 h-4" />, img: '/images/topic1_scheme.jpg' },
               { id: 'operando-reactivity', title: 'Electrochemical Interfacial Reactivity', icon: <Zap className="w-4 h-4" />, img: '/images/topic2_scheme.png' },
-              { id: 'data-driven-inverse', title: 'Data-Driven Materials Design', icon: <Brain className="w-4 h-4" />, img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600' },
+              { id: 'data-driven-inverse', title: 'Data-Driven Materials Design', icon: <Brain className="w-4 h-4" />, img: '/images/topic3_scheme.png' },
             ].map((theme, i) => (
               <Link 
                 key={i}
@@ -348,8 +348,10 @@ export default function Home() {
                     
                     {/* Hover Overlay */}
                     <div className="absolute top-0 left-0 w-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0 flex items-center justify-between z-10">
-                      <span className="font-sans text-[10px] font-bold tracking-widest text-primary uppercase drop-shadow-md">Explore Theme</span>
-                      <ArrowRight size={12} className="text-primary drop-shadow-md" />
+                      <span className="font-sans text-[9px] font-bold tracking-widest text-primary uppercase bg-white/70 backdrop-blur-sm px-2 py-1 rounded-sm">Explore Theme</span>
+                      <div className="bg-white/70 backdrop-blur-sm p-1.5 rounded-sm">
+                        <ArrowRight size={10} className="text-primary" />
+                      </div>
                     </div>
                   </div>
                   <div className="p-3 flex flex-col justify-center flex-auto">
@@ -510,7 +512,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 py-24 bg-primary text-white">
+      <section className="relative z-10 py-12 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl text-center md:text-left space-y-1">
             <h2 className="font-sans text-xl font-extrabold tracking-tight text-white">Join our research team.</h2>

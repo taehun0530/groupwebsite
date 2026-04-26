@@ -77,7 +77,7 @@ const themes = [
     icon: <Database size={24} />,
     desc: 'We use data-driven machine learning and materials-informatics approaches to learn structure–property relationships, explore and generate materials spaces, and rapidly identify promising candidates for targeted applications. By combining data mining, graph-based and transformer-based representations, symbolic regression, generative modeling, and uncertainty quantification, we aim to establish design rules for ionic conductors, semiconductors, and electrochemical materials. The goal of this theme is to go beyond predictive accuracy by deriving interpretable descriptors, quantifying model confidence, and developing actionable inverse-design strategies that connect candidate generation with experimentally relevant materials discovery.',
     descKr: '우리는 데이터 기반 머신러닝과 소재정보학 접근법을 활용하여 구조–물성 관계를 학습하고, 소재 공간을 탐색·생성하며, 목표 응용에 적합한 유망 후보를 빠르게 발굴하고자 합니다. 데이터 마이닝, graph 기반 및 transformer 기반 표현, symbolic regression, 생성 모델, 그리고 불확실성 정량화를 결합하여 이온전도체, 반도체, 전기화학 소재에 대한 설계 규칙을 확립하는 것을 목표로 합니다. 이 주제의 목표는 단순한 예측 정확도를 넘어서, 해석 가능한 descriptor를 도출하고 모델의 신뢰도를 정량화하며, 후보 생성과 실험적으로 의미 있는 소재 발굴을 연결하는 실질적인 역설계 전략을 구축하는 것입니다.',
-    image: 'https://picsum.photos/seed/design/400/400',
+    image: '/images/topic3.png',
     methodology: 'Data Mining, Graph/Transformer Representations, Symbolic Regression, Generative Models, Uncertainty Quantification',
     questions: [
       'How can data-driven models learn structure–property relationships and rapidly identify promising material candidates across complex materials spaces?',
