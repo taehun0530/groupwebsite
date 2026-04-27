@@ -97,7 +97,7 @@ export default function Home() {
       <section className="relative z-10 min-h-[35vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-100">
           <img 
-            src="/images/main_banner.jpg" 
+            src="/images/main-banner.jpg" 
             alt="Atomic structure visualization" 
             className="w-full h-full object-cover object-left"
             referrerPolicy="no-referrer"
@@ -324,9 +324,9 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             {[
-              { id: 'complex-structure', title: 'Complex Structure Discovery', icon: <BarChart3 className="w-4 h-4" />, img: '/images/topic1_scheme.jpg' },
-              { id: 'operando-reactivity', title: 'Electrochemical Interfacial Reactivity', icon: <Zap className="w-4 h-4" />, img: '/images/topic2_scheme.png' },
-              { id: 'data-driven-inverse', title: 'Data-Driven Materials Design', icon: <Brain className="w-4 h-4" />, img: '/images/topic3_scheme.png' },
+              { id: 'complex-structure', title: 'Complex Structure Discovery', icon: <BarChart3 className="w-4 h-4" />, img: '/images/topic1-scheme.jpg' },
+              { id: 'operando-reactivity', title: 'Electrochemical Interfacial Reactivity', icon: <Zap className="w-4 h-4" />, img: '/images/topic2-scheme.png' },
+              { id: 'data-driven-inverse', title: 'Data-Driven Materials Design', icon: <Brain className="w-4 h-4" />, img: '/images/topic3-scheme.png' },
             ].map((theme, i) => (
               <Link 
                 key={i}

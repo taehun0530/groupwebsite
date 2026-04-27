@@ -11,7 +11,7 @@ const PageBanner: React.FC<PageBannerProps> = ({ hideLine = false }) => {
     <div className="relative w-full h-24 md:h-[120px] overflow-hidden bg-primary">
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/main_banner.jpg" 
+          src="/images/main-banner.jpg" 
           alt="Decorative artwork" 
           className="w-full h-full object-cover object-[0%_65%]"
           referrerPolicy="no-referrer"
