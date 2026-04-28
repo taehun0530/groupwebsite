@@ -69,7 +69,7 @@ export default function People() {
                   <span className="font-academic text-sm">taehun.lee@dgist.ac.kr</span>
                 </a>
                 <span className="text-slate-500 text-xs">|</span>
-                <a href="https://scholar.google.com/scholar?q=Taehun+Lee+DGIST" target="_blank" className="flex items-center gap-1.5 hover:text-tertiary transition-colors">
+                <a href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" target="_blank" className="flex items-center gap-1.5 hover:text-tertiary transition-colors">
                   <GraduationCap size={12} className="text-primary" />
                   <span className="font-academic text-sm">Google Scholar</span>
                 </a>

@@ -73,7 +73,7 @@ export default function Profile() {
                 <span className="font-academic text-xs">taehun.lee@dgist.ac.kr</span>
               </a>
               <span className="hidden md:inline text-slate-300 text-xs text-center">|</span>
-              <a href="https://scholar.google.com/scholar?q=Taehun+Lee+DGIST" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+              <a href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-primary transition-colors">
                 <GraduationCap size={12} className="text-primary" />
                 <span className="font-academic text-xs">Google Scholar</span>
               </a>

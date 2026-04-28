@@ -354,7 +354,7 @@ export default function Publications() {
         </div>
         <div className="flex flex-col gap-2 mt-4 ml-[60px]">
           <a 
-            href="https://scholar.google.com/scholar?q=Taehun+Lee+DGIST" 
+            href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-tertiary font-sans text-[10px] font-bold uppercase tracking-[0.15em] hover:text-primary transition-colors border-b border-tertiary/20 pb-0.5 w-fit"
