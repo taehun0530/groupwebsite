@@ -64,8 +64,8 @@ export default function Profile() {
         <div className="flex flex-col md:flex-row gap-6 items-start pb-4 relative pl-[60px]">
           <div className="flex-grow">
             <div className="flex flex-wrap items-baseline gap-3 mb-2">
-              <h1 className="font-sans text-3xl font-extrabold text-primary tracking-tighter">Taehun Lee</h1>
-              <span className="font-sans text-lg text-slate-500 font-medium">(이태훈)</span>
+              <h1 className="font-academic text-2xl font-bold text-primary tracking-tight">Taehun Lee</h1>
+              <span className="font-sans text-base text-slate-500 font-medium">(이태훈)</span>
             </div>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-slate-500">
               <a href="mailto:taehun.lee@dgist.ac.kr" className="flex items-center gap-1.5 hover:text-primary transition-colors">
@@ -79,11 +79,10 @@ export default function Profile() {
               </a>
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 w-12 h-1 bg-tertiary" />
         </div>
       </header>
 
-      <div className="space-y-24">
+      <div className="space-y-10">
         {sections.map((section, idx) => (
           <motion.section 
             key={idx}

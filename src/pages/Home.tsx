@@ -158,7 +158,7 @@ export default function Home() {
               <div className="lg:col-span-5 space-y-6">
                 <div className="relative">
                   <p className="text-sm md:text-base font-light text-slate-800 font-academic leading-relaxed text-left tracking-tight">
-                    Led by <span className="font-bold text-primary border-b-2 border-accent-blue/30 pb-0.5">Professor Taehun Lee</span> in the Department of Energy Science and Engineering at DGIST, our research combines <span className="font-medium text-slate-900 italic">computational materials science</span>, quantum-mechanical simulations, and machine learning to understand and design functional materials.
+                    Led by <span className="font-bold text-primary border-b-2 border-accent-blue/30 pb-0.5">Professor Taehun Lee</span> in the Department of Energy Science and Engineering at Daegu Gyeongbuk Institute of Science & Technology (DGIST), our research combines <span className="font-medium text-slate-900 italic">computational materials science</span>, quantum-mechanical simulations, and machine learning to understand and design functional materials.
                   </p>
                 </div>
                 <div className="pt-4 flex gap-4">
