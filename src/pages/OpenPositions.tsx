@@ -7,9 +7,9 @@ export default function OpenPositions() {
   return (
     <>
     <PageBanner hideLine />
-    <div className="py-24 max-w-7xl mx-auto px-8">
+    <div className="py-10 max-w-7xl mx-auto px-8">
       {/* Header Section */}
-      <header className="mb-24 pb-8 border-b border-slate-200">
+      <header className="mb-10 pb-8 border-b border-slate-200">
         <div className="flex items-center gap-3 mb-6">
           <span className="h-px w-12 bg-primary" />
           <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Open Positions</h1>
@@ -20,7 +20,7 @@ export default function OpenPositions() {
       </header>
 
       {/* Opportunities */}
-      <section className="space-y-6 mb-24">
+      <section className="space-y-6 mb-10">
         <div className="flex items-center gap-4 mb-4">
           <h2 className="text-[10px] font-bold uppercase tracking-widest text-primary shrink-0">Available Opportunities</h2>
           <div className="h-px grow bg-slate-200" />
@@ -54,7 +54,7 @@ export default function OpenPositions() {
       </section>
 
       {/* Research Projects */}
-      <section className="space-y-6 mb-24">
+      <section className="space-y-6 mb-10">
         <div className="flex items-center gap-4 mb-5">
           <h2 className="text-[10px] font-bold uppercase tracking-widest text-primary shrink-0">Available Research Projects</h2>
           <div className="h-px grow bg-slate-200" />

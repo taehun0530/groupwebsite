@@ -76,7 +76,7 @@ export default function MaterialsSystems() {
   return (
     <>
     <PageBanner hideLine />
-    <div className="py-24 max-w-7xl mx-auto px-8">
+    <div className="py-10 max-w-7xl mx-auto px-8">
       <Link 
         to="/" 
         className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-8"
@@ -84,7 +84,7 @@ export default function MaterialsSystems() {
         <ChevronLeft size={14} /> Back to Home
       </Link>
 
-      <header className="mb-24">
+      <header className="mb-10">
         <div className="flex items-center gap-3 mb-6">
           <span className="h-px w-12 bg-primary" />
           <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">

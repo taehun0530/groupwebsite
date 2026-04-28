@@ -21,7 +21,7 @@ export default function People() {
   return (
     <>
     <PageBanner hideLine />
-    <div className="py-24 max-w-7xl mx-auto px-8">
+    <div className="py-10 max-w-7xl mx-auto px-8">
       {/* Header Section */}
       <header className="mb-10 pb-8 border-b border-slate-200">
         <div className="flex items-center gap-3 mb-6">
@@ -36,7 +36,7 @@ export default function People() {
       </header>
 
       {/* PI Section */}
-      <section className="mb-24">
+      <section className="mb-10">
         <div className="flex items-center gap-3 mb-8">
           <span className="h-px w-10 bg-primary" />
           <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Principal Investigator</h2>
@@ -103,10 +103,10 @@ export default function People() {
         </div>
       </section>
 
-      <div className="mb-24 h-[1px] bg-slate-200" />
+      <div className="mb-10 h-[1px] bg-slate-200" />
 
       {/* Researchers */}
-      <section className="mb-24">
+      <section className="mb-10">
         <div className="flex items-center gap-3 mb-8">
           <span className="h-px w-10 bg-primary" />
           <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Researchers</h2>
@@ -120,7 +120,7 @@ export default function People() {
       </section>
 
       {/* Graduate Students */}
-      <section className="mb-24">
+      <section className="mb-10">
         <div className="flex items-center gap-3 mb-8">
           <span className="h-px w-10 bg-primary" />
           <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Graduate Students</h2>
@@ -179,7 +179,7 @@ export default function People() {
       </section>
 
       {/* Undergraduate Interns */}
-      <section className="mb-24">
+      <section className="mb-10">
         <div className="flex items-center gap-3 mb-8">
           <span className="h-px w-10 bg-primary" />
           <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Undergraduate Interns</h2>

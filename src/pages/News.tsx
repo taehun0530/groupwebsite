@@ -60,8 +60,8 @@ export default function News() {
   return (
     <>
     <PageBanner hideLine />
-    <div className="py-24 max-w-7xl mx-auto px-8">
-      <header className="mb-24 pb-6 border-b border-slate-200">
+    <div className="py-10 max-w-7xl mx-auto px-8">
+      <header className="mb-10 pb-8 border-b border-slate-200">
         <div className="flex items-center gap-3 mb-6">
           <span className="h-px w-12 bg-primary" />
           <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">News</h1>
@@ -71,7 +71,7 @@ export default function News() {
         </p>
       </header>
 
-      <div className="space-y-24">
+      <div className="space-y-6">
         {newsData.map((item, i) => (
           <motion.article 
             key={item.id}

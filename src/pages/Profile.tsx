@@ -47,7 +47,7 @@ export default function Profile() {
   return (
     <>
     <PageBanner hideLine />
-    <div className="py-24 max-w-4xl mx-auto px-8">
+    <div className="py-10 max-w-4xl mx-auto px-8">
       <button 
         onClick={() => navigate(-1)}
         className="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors mb-6 group"
@@ -56,7 +56,7 @@ export default function Profile() {
         <span className="font-sans text-[10px] font-bold uppercase tracking-widest">Back to People</span>
       </button>
 
-      <header className="mb-24">
+      <header className="mb-10">
         <div className="flex items-center gap-3 mb-6">
           <span className="h-px w-12 bg-primary" />
           <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Principal Investigator</h1>

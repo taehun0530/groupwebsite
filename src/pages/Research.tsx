@@ -126,7 +126,7 @@ const Research = () => {
       setActiveTheme(themeId);
       // Small timeout to ensure the DOM is ready if it's the first mount
       setTimeout(() => {
-        const element = document.getElementById('research-content');
+        const element = document.getElementById('research-themes');
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -141,7 +141,7 @@ const Research = () => {
   return (
     <>
     <PageBanner hideLine />
-    <div id="research-content" className="py-24 max-w-7xl mx-auto px-8 relative overflow-hidden">
+    <div id="research-content" className="py-10 max-w-7xl mx-auto px-8 relative overflow-hidden">
       {/* Background Decorative Elements - Zig Zag Arrangement */}
       {/* 1. Top Right - Neural Network */}
       <div className="absolute -right-24 -top-12 opacity-[0.10] pointer-events-none select-none w-[500px] h-[500px] z-0">
@@ -193,7 +193,7 @@ const Research = () => {
       </header>
 
         {/* Intro Text */}
-        <section className="relative z-10 mb-24">
+        <section className="relative z-10">
           {/* Text Content */}
           <div className="w-full space-y-4 pl-[60px]">
             <div className="font-academic text-sm font-light text-slate-700 leading-relaxed">
@@ -234,7 +234,7 @@ const Research = () => {
           <div className="mt-8 h-[1px] bg-slate-200" />
         </section>
 
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-10 gap-10">
+      <div id="research-themes" className="relative z-10 grid grid-cols-1 md:grid-cols-10 gap-10 py-10">
         {/* Sidebar Navigation */}
         <aside className="md:col-span-2 h-fit sticky top-32">
           <nav className="flex flex-col gap-4">

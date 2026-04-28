@@ -138,7 +138,7 @@ export default function Home() {
       </section>
 
       {/* Group Intro Section */}
-      <section className="relative z-10 py-24 bg-transparent overflow-hidden">
+      <section className="relative z-10 py-10 bg-transparent overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 relative">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -213,7 +213,7 @@ export default function Home() {
       </div>
 
       {/* Research Overview */}
-      <section className="relative z-10 py-24 bg-transparent">
+      <section className="relative z-10 py-10 bg-transparent">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-px w-12 bg-primary" />
@@ -275,7 +275,7 @@ export default function Home() {
       </div>
 
       {/* Research Themes */}
-      <section className="relative z-10 py-24 bg-transparent">
+      <section className="relative z-10 py-10 bg-transparent">
         <div className="max-w-7xl mx-auto px-8">
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-8">
@@ -377,7 +377,7 @@ export default function Home() {
       </div>
 
       {/* Materials Systems */}
-      <section className="relative z-10 py-24 bg-transparent">
+      <section className="relative z-10 py-10 bg-transparent">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
@@ -453,7 +453,7 @@ export default function Home() {
       </div>
 
       {/* Method Section */}
-      <section className="relative z-10 py-24 bg-transparent">
+      <section className="relative z-10 py-10 bg-transparent">
         <div className="max-w-7xl mx-auto px-8">
           <div className="mb-6">
             <div className="flex items-center gap-3 mb-3">
