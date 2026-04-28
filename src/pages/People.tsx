@@ -49,7 +49,7 @@ export default function People() {
               className="aspect-square bg-slate-100 overflow-hidden rounded-md group shadow-md"
             >
               <img 
-                src="/images/taehun-lee-pi.jpg" 
+                src="/images/taehun_lee_pi.jpg" 
                 alt="Taehun Lee" 
                 className="w-full h-full object-cover object-[center_0%] transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"
